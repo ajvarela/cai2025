@@ -1,0 +1,45 @@
+{
+    "name": "modelExtension",
+    "prefix": "model",
+    "uri": "http://model",
+    "xml": {
+      "tagAlias": "lowerCase"
+    },
+    "associations": [],
+    "types": [
+      {
+        "name": "model",
+        "extends": [
+          "bpmn:Process"
+        ],
+        "properties": [
+          {
+            "name": "instance",
+            "isAttr": true,
+            "type": "Integer"
+          },
+          {
+            "name": "frequency",
+            "isAttr": true,
+            "type": "Integer"
+          },
+          {
+            "name": "userWithoutRole",
+            "isAttr": true,
+            "type": "String"
+          },
+          {
+            "name": "userWithRole",
+            "isAttr": false,
+            "type": "Object"
+          },
+          {
+            "name": "security",
+            "isAttr": true,
+            "type": "Boolean"
+          }            
+        ]
+      }
+    ]
+  }
+  
