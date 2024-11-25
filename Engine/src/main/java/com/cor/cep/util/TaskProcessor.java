@@ -30,8 +30,7 @@ public class TaskProcessor {
 
     public void processTaskFiles(String directoryPath) {
         File folder = new File(directoryPath);
-        File[] listOfFiles = folder.listFiles((dir, name) -> name.toLowerCase().endsWith(".txt"));
-    
+        File[] listOfFiles = folder.listFiles((dir, name) -> name.toLowerCase().endsWith(".log"));
         if (listOfFiles != null) {
             for (File file : listOfFiles) {
                 if (file.isFile()) {
@@ -44,7 +43,6 @@ public class TaskProcessor {
                             .collect(Collectors.groupingBy(
                                 task -> task.getStartTime() != null ? task.getStartTime() : -1L, 
                                 TreeMap::new, Collectors.toList()));
-
                     for (Task task : tasks) {
                         taskEventHandler.handle(task);
                     }

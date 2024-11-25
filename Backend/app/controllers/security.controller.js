@@ -129,8 +129,7 @@ exports.esperRules = function (req, res) {
 
 const { exec } = require('child_process');
 
-const FILES_DIRECTORY = path.resolve(__dirname, '../../../Simulator/files/');
-const SIMULATOR_DIRECTORY = path.resolve(__dirname, '../../../Simulator');
+const FILES_DIRECTORY = path.resolve(__dirname, '../../../eventfile/');
 const ENGINE_DIRECTORY = path.resolve(__dirname, '../../../Engine');
 
 exports.saveEsperFile = (req, res) => {
@@ -140,58 +139,32 @@ exports.saveEsperFile = (req, res) => {
         return res.status(400).send({ message: 'El contenido o el nombre del archivo faltan' });
     }
     const filePath = path.join(FILES_DIRECTORY, filename);
-    fs.writeFile(filePath, content, 'utf8', (err) => {
-        if (err) {
-            console.error('Error al guardar el archivo:', err);
-            return res.status(500).send({ message: 'Error al guardar el archivo' });
+    exec('mvn exec:java', { cwd: ENGINE_DIRECTORY, maxBuffer: 1024 * 1024 * 10 }, (mvnError, mvnStdout, mvnStderr) => {
+        if (mvnError) {
+            console.error(`Error executing mvn exec:java: ${mvnError.message}`);
+            return res.status(500).send({ message: 'Error al ejecutar mvn exec:java' });
         }
-        exec(`python main.py`, { cwd: SIMULATOR_DIRECTORY }, (error, stdout, stderr) => {
-            if (error) {
-                console.error(`Error al ejecutar el simulador: ${error.message}`);
-                return res.status(500).send({ message: 'Error al ejecutar el simulador' });
+
+        fs.readdir(FILES_DIRECTORY, (err, files) => {
+            if (err) {
+                console.error(`Error al leer la carpeta: ${err.message}`);
+                return res.status(500).send({ message: 'Error al leer la carpeta de archivos' });
             }
-            if (stderr) {
-                console.error(`Error en el simulador: ${stderr}`);
-            }
-            exec('mvn exec:java', { cwd: ENGINE_DIRECTORY, maxBuffer: 1024 * 1024 * 10 }, (mvnError, mvnStdout, mvnStderr) => {
-                if (mvnError) {
-                    console.error(`Error executing mvn exec:java: ${mvnError.message}`);
-                    return res.status(500).send({ message: 'Error al ejecutar mvn exec:java' });
+            const violationsFilePath = path.join(__dirname, '..', '..', '..', 'Modeler', 'example', 'src', 'files', 'violations.txt');
+
+            fs.readFile(violationsFilePath, 'utf8', (err, data) => {
+                if (err) {
+                    console.error('Error al leer violations.txt:', err);
+                    return res.status(500).send({ message: 'Error al leer violations.txt' });
                 }
-
-                fs.readdir(FILES_DIRECTORY, (err, files) => {
-                    if (err) {
-                        console.error(`Error al leer la carpeta: ${err.message}`);
-                        return res.status(500).send({ message: 'Error al leer la carpeta de archivos' });
+                fs.unlink(violationsFilePath, (unlinkErr) => {
+                    if (unlinkErr) {
+                        console.error('Error al eliminar violations.txt:', unlinkErr);
+                    } else {
+                        console.log('Compliance completed succesfully');
                     }
-                    files.forEach(file => {
-                        const filePath = path.join(FILES_DIRECTORY, file);
-                        fs.unlink(filePath, (unlinkErr) => {
-                            if (unlinkErr) {
-                                console.error(`Error deleting file: ${filePath}`, unlinkErr);
-                            } else {
-                            }
-                        });
-                    });
-
-                    const violationsFilePath = path.join(__dirname, '..', '..', '..', 'Modeler', 'example', 'src', 'files', 'violations.txt');
-
-                    fs.readFile(violationsFilePath, 'utf8', (err, data) => {
-                        if (err) {
-                            console.error('Error al leer violations.txt:', err);
-                            return res.status(500).send({ message: 'Error al leer violations.txt' });
-                        }
-                        res.send({ content: data });
-                        
-                        fs.unlink(violationsFilePath, (unlinkErr) => {
-                            if (unlinkErr) {
-                                console.error('Error al eliminar violations.txt:', unlinkErr);
-                            } else {
-                                console.log('Compliance completed succesfully');
-                            }
-                        });
-                    });
                 });
+                res.send({ content: data });
             });
         });
     });

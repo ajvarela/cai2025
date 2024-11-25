@@ -41,9 +41,8 @@ public class StartDemo {
 
         TaskProcessor taskProcessor = (TaskProcessor) factory.getBean("taskProcessor");
 
-        String directoryPath = "../Simulator/files/";
+        String directoryPath = "../eventFile/";
         File directory = new File(directoryPath);
-
         String canonicalPath = directory.getCanonicalPath();
 
         taskProcessor.processTaskFiles(directoryPath);

@@ -102,9 +102,11 @@ statementBod.addListener((newData, oldData, stat, rt) -> {
         String user2 = (String) newData[0].get("user2");
         Integer instance1 = (Integer) newData[0].get("instance1");
         String violationKey = parentId + "|" + subTask1Id + "|" + subTask2Id + "|" + instance1;
-
-        if (!reportedBodViolations.contains(violationKey)) {
+        String violationKey2 = parentId + "|" + subTask2Id + "|" + subTask1Id + "|" + instance1;
+        
+        if (!reportedBodViolations.contains(violationKey) && !reportedBodViolations.contains(violationKey2)) {
             reportedBodViolations.add(violationKey);
+            reportedBodViolations.add(violationKey2);
 
             sb.append("\n---------------------------------");
             sb.append("\n- [BOD MONITOR] Binding of Duties violation detected:");
@@ -178,9 +180,11 @@ statementSod.addListener((newData, oldData, stat, rt) -> {
         Integer instance1 = (Integer) newData[0].get("instance1");
 
         String violationKey = parentId + "|" + subTask1Id + "|" + subTask2Id + "|" + instance1;
+        String violationKey2 = parentId + "|" + subTask2Id + "|" + subTask1Id + "|" + instance1;
 
-        if (!reportedSodViolations.contains(violationKey)) {
+        if (!reportedSodViolations.contains(violationKey) && !reportedSodViolations.contains(violationKey2)) {
             reportedSodViolations.add(violationKey);
+            reportedSodViolations.add(violationKey2);
 
             sb.append("\n---------------------------------");
             sb.append("\n- [SOD MONITOR] Segregation of Duties violation detected:");
