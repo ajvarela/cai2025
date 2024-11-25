@@ -1,0 +1,124 @@
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 3: StandBy on task Activity_17ptqba, start at 182, stops at 184, duration of 2
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 4: StandBy on task Activity_0bcw6ho, start at 346, stops at 355, duration of 9
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_1u4k5de, start at 413, stops at 422, duration of 9
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_17ptqba, start at 413, stops at 426, duration of 13
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_0bcw6ho, start at 425, stops at 438, duration of 13
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_0bcw6ho, start at 537, stops at 543, duration of 6
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 10: StandBy on task Activity_17ptqba, start at 595, stops at 604, duration of 9
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 11: StandBy on task Activity_1u4k5de, start at 643, stops at 646, duration of 3
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 11: StandBy on task Activity_17ptqba, start at 643, stops at 649, duration of 6
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 9: StandBy on task Activity_0bcw6ho, start at 649, stops at 665, duration of 16
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 8: StandBy on task Activity_07uebsf, start at 649, stops at 666, duration of 17
+---------------------------------
+---------------------------------
+- [SOD MONITOR] Segregation of Duties violation detected:
+- Parent Task ID: Activity_0oz806n
+- SubTask 1 ID: Activity_03brord
+- SubTask 2 ID: Activity_03d8opo
+- Executed By User: ecofinantial1
+- Instance: 4
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 10: StandBy on task Activity_0bcw6ho, start at 714, stops at 724, duration of 10
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 12: StandBy on task Activity_0bcw6ho, start at 802, stops at 806, duration of 4
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 11: StandBy on task Activity_07uebsf, start at 806, stops at 825, duration of 19
+---------------------------------
+---------------------------------
+- [SOD MONITOR] Segregation of Duties violation detected:
+- Parent Task ID: Activity_0oz806n
+- SubTask 1 ID: Activity_03brord
+- SubTask 2 ID: Activity_03d8opo
+- Executed By User: ecofinantial1
+- Instance: 7
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 15: StandBy on task Activity_17ptqba, start at 888, stops at 891, duration of 3
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 13: StandBy on task Activity_0bcw6ho, start at 891, stops at 893, duration of 2
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 17: StandBy on task Activity_17ptqba, start at 1002, stops at 1008, duration of 6
+---------------------------------
+---------------------------------
+- [SOD MONITOR] Segregation of Duties violation detected:
+- Parent Task ID: Activity_0oz806n
+- SubTask 1 ID: Activity_03brord
+- SubTask 2 ID: Activity_03d8opo
+- Executed By User: ecofinantial1
+- Instance: 11
+---------------------------------
+---------------------------------
+- [SOD MONITOR] Segregation of Duties violation detected:
+- Parent Task ID: Activity_0oz806n
+- SubTask 1 ID: Activity_03brord
+- SubTask 2 ID: Activity_03d8opo
+- Executed By User: ecofinantial3
+- Instance: 12
+---------------------------------
+---------------------------------
+- [SOD MONITOR] Segregation of Duties violation detected:
+- Parent Task ID: Activity_0oz806n
+- SubTask 1 ID: Activity_03brord
+- SubTask 2 ID: Activity_03d8opo
+- Executed By User: ecofinantial2
+- Instance: 13
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 13: StandBy on task Activity_1p7rey7, start at 1213, stops at 1221, duration of 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 17: StandBy on task Activity_1p7rey7, start at 1404, stops at 1426, duration of 22
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 27: StandBy on task Activity_0bcw6ho, start at 1665, stops at 1669, duration of 4
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 32: StandBy on task Activity_17ptqba, start at 1882, stops at 1903, duration of 21
+---------------------------------

@@ -1,0 +1,415 @@
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1pfd2dv
+- SubTask ID: Activity_0bcw6ho
+- User(s): technician2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 2
+- Instance: 2
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_1lsjzdf
+- SubTask 2 ID: Activity_0rhq2zz
+- Executed By Users: company1 and company2
+- Instance: 1
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_17ptqba, start at 289, stops at 297, duration of 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 3: StandBy on task Activity_0bcw6ho, start at 300, stops at 305, duration of 5
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1pfd2dv
+- SubTask ID: Activity_0bcw6ho
+- User(s): allLane2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 2
+- Instance: 3
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 1
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 6: StandBy on task Activity_17ptqba, start at 346, stops at 356, duration of 10
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_1conkxb, start at 356, stops at 370, duration of 14
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 4: StandBy on task Activity_0bcw6ho, start at 370, stops at 374, duration of 4
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1pfd2dv
+- SubTask ID: Activity_0bcw6ho
+- User(s): technician2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 2
+- Instance: 4
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_0rhq2zz
+- SubTask 2 ID: Activity_1lsjzdf
+- Executed By Users: company1 and company2
+- Instance: 2
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1pfd2dv
+- SubTask ID: Activity_0bcw6ho
+- User(s): allLane1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 2
+- Instance: 5
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 8: StandBy on task Activity_1lsjzdf, start at 420, stops at 422, duration of 2
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_1u4k5de, start at 422, stops at 423, duration of 1
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 2
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_17ptqba, start at 422, stops at 458, duration of 36
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 8: StandBy on task Activity_1u4k5de, start at 469, stops at 472, duration of 3
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 8: StandBy on task Activity_17ptqba, start at 469, stops at 474, duration of 5
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 3
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 4: StandBy on task Activity_07uebsf, start at 472, stops at 519, duration of 47
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 6: StandBy on task Activity_0bcw6ho, start at 476, stops at 524, duration of 48
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1pfd2dv
+- SubTask ID: Activity_0bcw6ho
+- User(s): allLane1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 2
+- Instance: 6
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_1conkxb, start at 519, stops at 526, duration of 7
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_07uebsf, start at 524, stops at 529, duration of 5
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 9: StandBy on task Activity_1u4k5de, start at 530, stops at 539, duration of 9
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_0xcfjgn
+- SubTask 1 ID: Activity_1u4k5de
+- SubTask 2 ID: Activity_1p7rey7
+- Executed By Users: technician1 and company2
+- Instance: 1
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 8: StandBy on task Activity_1conkxb, start at 539, stops at 567, duration of 28
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 9: StandBy on task Activity_17ptqba, start at 530, stops at 573, duration of 43
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 4: StandBy on task Activity_0rhq2zz, start at 573, stops at 581, duration of 8
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_0rhq2zz
+- SubTask 2 ID: Activity_1lsjzdf
+- Executed By Users: company1 and company2
+- Instance: 4
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_0bcw6ho, start at 567, stops at 585, duration of 18
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1pfd2dv
+- SubTask ID: Activity_0bcw6ho
+- User(s): technician1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 2
+- Instance: 7
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 10: StandBy on task Activity_1u4k5de, start at 581, stops at 601, duration of 20
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 10: StandBy on task Activity_17ptqba, start at 581, stops at 620, duration of 39
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_0rhq2zz, start at 585, stops at 624, duration of 39
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_0rhq2zz
+- SubTask 2 ID: Activity_1lsjzdf
+- Executed By Users: company2 and company1
+- Instance: 5
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 4
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_0xcfjgn
+- SubTask 1 ID: Activity_1p7rey7
+- SubTask 2 ID: Activity_1u4k5de
+- Executed By Users: company1 and allLane2
+- Instance: 2
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 8: StandBy on task Activity_0bcw6ho, start at 619, stops at 643, duration of 24
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1pfd2dv
+- SubTask ID: Activity_0bcw6ho
+- User(s): allLane2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 2
+- Instance: 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 6: StandBy on task Activity_07uebsf, start at 620, stops at 655, duration of 35
+---------------------------------
+---------------------------------
+- [SOD MONITOR] Segregation of Duties violation detected:
+- Parent Task ID: Activity_0xf32a2
+- SubTask 1 ID: Activity_17ptqba
+- SubTask 2 ID: Activity_1conkxb
+- Executed By User: allLane1
+- Instance: 10
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_1twduio, start at 670, stops at 688, duration of 18
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 5
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_0xcfjgn
+- SubTask 1 ID: Activity_1p7rey7
+- SubTask 2 ID: Activity_1u4k5de
+- Executed By Users: company2 and allLane2
+- Instance: 3
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 9: StandBy on task Activity_0bcw6ho, start at 688, stops at 713, duration of 25
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1pfd2dv
+- SubTask ID: Activity_0bcw6ho
+- User(s): technician2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 2
+- Instance: 9
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 6: StandBy on task Activity_0rhq2zz, start at 713, stops at 715, duration of 2
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1pfd2dv
+- SubTask ID: Activity_0bcw6ho
+- User(s): allLane1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 2
+- Instance: 10
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 6
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_0rhq2zz
+- SubTask 2 ID: Activity_1lsjzdf
+- Executed By Users: company1 and company2
+- Instance: 8
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 7
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): allLane1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_03brord, start at 861, stops at 887, duration of 26
+---------------------------------
+---------------------------------
+- [SOD MONITOR] Segregation of Duties violation detected:
+- Parent Task ID: Activity_0oz806n
+- SubTask 1 ID: Activity_03brord
+- SubTask 2 ID: Activity_03d8opo
+- Executed By User: ecofinantial1
+- Instance: 6
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_1p7rey7, start at 887, stops at 901, duration of 14
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_0xcfjgn
+- SubTask 1 ID: Activity_1p7rey7
+- SubTask 2 ID: Activity_1u4k5de
+- Executed By Users: company2 and technician1
+- Instance: 5
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 9
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 10
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_0xcfjgn
+- SubTask 1 ID: Activity_1p7rey7
+- SubTask 2 ID: Activity_1u4k5de
+- Executed By Users: company1 and allLane1
+- Instance: 6
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_0xcfjgn
+- SubTask 1 ID: Activity_1p7rey7
+- SubTask 2 ID: Activity_1u4k5de
+- Executed By Users: company2 and technician1
+- Instance: 7
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_0xcfjgn
+- SubTask 1 ID: Activity_1p7rey7
+- SubTask 2 ID: Activity_1u4k5de
+- Executed By Users: company1 and technician2
+- Instance: 8
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_0xcfjgn
+- SubTask 1 ID: Activity_1p7rey7
+- SubTask 2 ID: Activity_1u4k5de
+- Executed By Users: company2 and technician2
+- Instance: 9
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_0xcfjgn
+- SubTask 1 ID: Activity_1p7rey7
+- SubTask 2 ID: Activity_1u4k5de
+- Executed By Users: allLane1 and technician2
+- Instance: 10
+---------------------------------

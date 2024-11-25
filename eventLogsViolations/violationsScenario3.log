@@ -1,0 +1,80 @@
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 3: StandBy on task Activity_17ptqba, start at 186, stops at 187, duration of 1
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 4: StandBy on task Activity_17ptqba, start at 234, stops at 243, duration of 9
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_1lsjzdf
+- SubTask 2 ID: Activity_0rhq2zz
+- Executed By Users: company3 and company4
+- Instance: 1
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 6: StandBy on task Activity_1u4k5de, start at 349, stops at 357, duration of 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 6: StandBy on task Activity_17ptqba, start at 349, stops at 365, duration of 16
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 4: StandBy on task Activity_0bcw6ho, start at 363, stops at 370, duration of 7
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_17ptqba, start at 421, stops at 429, duration of 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_0bcw6ho, start at 422, stops at 433, duration of 11
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 4: StandBy on task Activity_07uebsf, start at 433, stops at 441, duration of 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 6: StandBy on task Activity_0bcw6ho, start at 482, stops at 492, duration of 10
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_07uebsf, start at 492, stops at 501, duration of 9
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_0rhq2zz
+- SubTask 2 ID: Activity_1lsjzdf
+- Executed By Users: company3 and company2
+- Instance: 4
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_0bcw6ho, start at 538, stops at 546, duration of 8
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_0rhq2zz
+- SubTask 2 ID: Activity_1lsjzdf
+- Executed By Users: company2 and company3
+- Instance: 5
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 8: StandBy on task Activity_0bcw6ho, start at 596, stops at 608, duration of 12
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_0rhq2zz
+- SubTask 2 ID: Activity_1lsjzdf
+- Executed By Users: company3 and company1
+- Instance: 10
+---------------------------------

@@ -1,0 +1,350 @@
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 3: StandBy on task Activity_17ptqba, start at 188, stops at 189, duration of 1
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 4: StandBy on task Activity_17ptqba, start at 238, stops at 244, duration of 6
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_1u4k5de, start at 292, stops at 294, duration of 2
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_17ptqba, start at 292, stops at 302, duration of 10
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 1
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 4: StandBy on task Activity_0bcw6ho, start at 360, stops at 368, duration of 8
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 2
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_17ptqba, start at 423, stops at 427, duration of 4
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 6: StandBy on task Activity_0bcw6ho, start at 474, stops at 482, duration of 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 8: StandBy on task Activity_1u4k5de, start at 475, stops at 483, duration of 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 8: StandBy on task Activity_17ptqba, start at 475, stops at 485, duration of 10
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 3
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator3
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 4
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 9: StandBy on task Activity_17ptqba, start at 531, stops at 535, duration of 4
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 6: StandBy on task Activity_07uebsf, start at 535, stops at 540, duration of 5
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_0bcw6ho, start at 537, stops at 550, duration of 13
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator4
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 5
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 6
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 9: StandBy on task Activity_0bcw6ho, start at 656, stops at 672, duration of 16
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 8: StandBy on task Activity_07uebsf, start at 672, stops at 677, duration of 5
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 10: StandBy on task Activity_0bcw6ho, start at 705, stops at 710, duration of 5
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 12: StandBy on task Activity_1u4k5de, start at 706, stops at 717, duration of 11
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 12: StandBy on task Activity_17ptqba, start at 706, stops at 724, duration of 18
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 9: StandBy on task Activity_07uebsf, start at 724, stops at 728, duration of 4
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 8: StandBy on task Activity_0rhq2zz, start at 728, stops at 732, duration of 4
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 7
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 11: StandBy on task Activity_0bcw6ho, start at 768, stops at 774, duration of 6
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 13: StandBy on task Activity_1u4k5de, start at 770, stops at 777, duration of 7
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 13: StandBy on task Activity_17ptqba, start at 770, stops at 782, duration of 12
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 10: StandBy on task Activity_07uebsf, start at 774, stops at 783, duration of 9
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 12: StandBy on task Activity_1conkxb, start at 783, stops at 814, duration of 31
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 9
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 13: StandBy on task Activity_0bcw6ho, start at 882, stops at 884, duration of 2
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 14: StandBy on task Activity_1conkxb, start at 893, stops at 911, duration of 18
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 15: StandBy on task Activity_1conkxb, start at 957, stops at 965, duration of 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 14: StandBy on task Activity_0bcw6ho, start at 965, stops at 979, duration of 14
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 18: StandBy on task Activity_1lsjzdf, start at 1020, stops at 1042, duration of 22
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 13
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 16: StandBy on task Activity_0bcw6ho, start at 1041, stops at 1060, duration of 19
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 17: StandBy on task Activity_1conkxb, start at 1064, stops at 1081, duration of 17
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 19: StandBy on task Activity_17ptqba, start at 1116, stops at 1136, duration of 20
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 17: StandBy on task Activity_0bcw6ho, start at 1136, stops at 1143, duration of 7
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 15: StandBy on task Activity_1twduio, start at 1162, stops at 1180, duration of 18
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator3
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 15
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 19: StandBy on task Activity_1conkxb, start at 1173, stops at 1180, duration of 7
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 16
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 21: StandBy on task Activity_17ptqba, start at 1247, stops at 1260, duration of 13
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 18: StandBy on task Activity_1twduio, start at 1319, stops at 1343, duration of 24
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator3
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 18
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 19: StandBy on task Activity_1twduio, start at 1357, stops at 1361, duration of 4
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 19
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 23: StandBy on task Activity_1u4k5de, start at 1359, stops at 1367, duration of 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 23: StandBy on task Activity_17ptqba, start at 1359, stops at 1372, duration of 13
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator3
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 20
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 24: StandBy on task Activity_1conkxb, start at 1470, stops at 1502, duration of 32
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 23: StandBy on task Activity_0rhq2zz, start at 1537, stops at 1544, duration of 7
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator4
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 22
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 26: StandBy on task Activity_1conkxb, start at 1587, stops at 1615, duration of 28
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 25
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 28: StandBy on task Activity_1conkxb, start at 1694, stops at 1716, duration of 22
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 27: StandBy on task Activity_1twduio, start at 1798, stops at 1800, duration of 2
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator4
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 27
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 31: StandBy on task Activity_1conkxb, start at 1872, stops at 1882, duration of 10
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 30: StandBy on task Activity_1twduio, start at 1952, stops at 1960, duration of 8
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 30
+---------------------------------

@@ -1,0 +1,142 @@
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 3: StandBy on task Activity_17ptqba, start at 178, stops at 183, duration of 5
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 4: StandBy on task Activity_17ptqba, start at 238, stops at 246, duration of 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 2: StandBy on task Activity_0bcw6ho, start at 250, stops at 251, duration of 1
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_1u4k5de, start at 293, stops at 298, duration of 5
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_17ptqba, start at 293, stops at 299, duration of 6
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 4: StandBy on task Activity_0bcw6ho, start at 365, stops at 379, duration of 14
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 3: StandBy on task Activity_07uebsf, start at 379, stops at 383, duration of 4
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_1u4k5de, start at 411, stops at 412, duration of 1
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_17ptqba, start at 411, stops at 413, duration of 2
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 6: StandBy on task Activity_1conkxb, start at 413, stops at 415, duration of 2
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 5: StandBy on task Activity_0bcw6ho, start at 420, stops at 425, duration of 5
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 4: StandBy on task Activity_07uebsf, start at 425, stops at 443, duration of 18
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_1conkxb, start at 466, stops at 473, duration of 7
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 6: StandBy on task Activity_0bcw6ho, start at 473, stops at 504, duration of 31
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_0rhq2zz
+- SubTask 2 ID: Activity_1lsjzdf
+- Executed By Users: company3 and company1
+- Instance: 4
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_0rhq2zz
+- SubTask 2 ID: Activity_1lsjzdf
+- Executed By Users: company4 and company3
+- Instance: 5
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator2
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 5
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 6: StandBy on task Activity_07uebsf, start at 569, stops at 585, duration of 16
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_07uebsf, start at 585, stops at 586, duration of 1
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 9: StandBy on task Activity_1conkxb, start at 591, stops at 599, duration of 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 10: StandBy on task Activity_17ptqba, start at 596, stops at 627, duration of 31
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 8: StandBy on task Activity_07uebsf, start at 627, stops at 639, duration of 12
+---------------------------------
+---------------------------------
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_0rhq2zz
+- SubTask 2 ID: Activity_1lsjzdf
+- Executed By Users: company4 and company1
+- Instance: 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 7: StandBy on task Activity_1twduio, start at 694, stops at 727, duration of 33
+---------------------------------
+---------------------------------
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator4
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 7
+---------------------------------
+---------------------------------
+- [SOD MONITOR] Segregation of Duties violation detected:
+- Parent Task ID: Activity_0oz806n
+- SubTask 1 ID: Activity_03brord
+- SubTask 2 ID: Activity_03d8opo
+- Executed By User: ecofinantial1
+- Instance: 8
+---------------------------------
+---------------------------------
+- [STANDBY VIOLATION] Detected:
+Instance 9: StandBy on task Activity_03brord, start at 839, stops at 840, duration of 1
+---------------------------------
+---------------------------------
+- [SOD MONITOR] Segregation of Duties violation detected:
+- Parent Task ID: Activity_0oz806n
+- SubTask 1 ID: Activity_03brord
+- SubTask 2 ID: Activity_03d8opo
+- Executed By User: ecofinantial3
+- Instance: 7
+---------------------------------
