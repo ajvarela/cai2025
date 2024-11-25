@@ -114,4 +114,4 @@ Scenario1 is selected as a default scenario, delete it from eventFile to test mo
 
  3. **Finally, click on the Compliance button to test the function**.
 
- 4. **On folder eventLogsViolations, are available the violations from the different scenarios**.
+ 4. **On folder eventLogsViolations, are available the violation logs from the different scenarios**.
