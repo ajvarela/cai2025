@@ -127,44 +127,33 @@ exports.esperRules = function (req, res) {
     });
 };
 
-const { exec } = require('child_process');
-
-const FILES_DIRECTORY = path.resolve(__dirname, '../../../eventfile/');
-const ENGINE_DIRECTORY = path.resolve(__dirname, '../../../Engine');
-
 exports.saveEsperFile = (req, res) => {
     const { content, filename } = req.body;
-
     if (!content || !filename) {
         return res.status(400).send({ message: 'El contenido o el nombre del archivo faltan' });
     }
-    const filePath = path.join(FILES_DIRECTORY, filename);
-    exec('mvn exec:java', { cwd: ENGINE_DIRECTORY, maxBuffer: 1024 * 1024 * 10 }, (mvnError, mvnStdout, mvnStderr) => {
-        if (mvnError) {
-            console.error(`Error executing mvn exec:java: ${mvnError.message}`);
-            return res.status(500).send({ message: 'Error al ejecutar mvn exec:java' });
-        }
-
-        fs.readdir(FILES_DIRECTORY, (err, files) => {
+    const gpt4o = 'diagnosisScenario' + filename + '-GPT-4o.txt'
+    const gpt4oPath = path.join(__dirname, '..', '..', '..', 'diagnosisLogs', gpt4o);
+    fs.readFile(gpt4oPath, 'utf8', (err, dataGPT4o) => {
+        if (err) {
+            console.error('Error al leer violations.txt:', err);
+            return res.status(500).send({ message: 'Error al leer violations.txt' });
+        };
+        const gpto1 = 'diagnosisScenario' + filename + '-GPT-o1-preview.txt'
+        const gpto1Path = path.join(__dirname, '..', '..', '..', 'diagnosisLogs', gpto1);
+        fs.readFile(gpto1Path, 'utf8', (err, dataGPTo1) => {
             if (err) {
-                console.error(`Error al leer la carpeta: ${err.message}`);
-                return res.status(500).send({ message: 'Error al leer la carpeta de archivos' });
-            }
-            const violationsFilePath = path.join(__dirname, '..', '..', '..', 'Modeler', 'example', 'src', 'files', 'violations.txt');
-
-            fs.readFile(violationsFilePath, 'utf8', (err, data) => {
+                console.error('Error al leer violations.txt:', err);
+                return res.status(500).send({ message: 'Error al leer violations.txt' });
+            };
+            const llama405 = 'diagnosisScenario' + filename + '-Llama-3.1-405b.txt'
+            const llama405Path = path.join(__dirname, '..', '..', '..', 'diagnosisLogs', llama405);
+            fs.readFile(llama405Path, 'utf8', (err, dataLlama) => {
                 if (err) {
                     console.error('Error al leer violations.txt:', err);
                     return res.status(500).send({ message: 'Error al leer violations.txt' });
-                }
-                fs.unlink(violationsFilePath, (unlinkErr) => {
-                    if (unlinkErr) {
-                        console.error('Error al eliminar violations.txt:', unlinkErr);
-                    } else {
-                        console.log('Compliance completed succesfully');
-                    }
-                });
-                res.send({ content: data });
+                };
+                res.send({Gpt4o: dataGPT4o, Gpto1: dataGPTo1, Llama405: dataLlama});
             });
         });
     });

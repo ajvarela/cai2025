@@ -122,35 +122,6 @@ statementBod.addListener((newData, oldData, stat, rt) -> {
     }
 });
 
-LOG.debug("Creating StandBy Check Expression");
-String standByEPL = "select * from Task where stopTime is not null";
-
-
-EPCompiled compiledStandBy = compiler.compile(standByEPL, args);
-EPDeployment deploymentStandBy = epRuntime.getDeploymentService().deploy(compiledStandBy);
-EPStatement statementStandBy = deploymentStandBy.getStatements()[0];
-
-statementStandBy.addListener((newData, oldData, stat, rt) -> {
-    
-    if (newData != null && newData.length > 0) {
-        String idBpmn = (String) newData[0].get("idBpmn");
-        Long startTime = (Long) newData[0].get("startTime");
-        Long stopTime = (Long) newData[0].get("stopTime");
-        Long time = (Long) newData[0].get("time");
-        Integer instance = (Integer) newData[0].get("instance");
-
-        String violationMessage = String.format(
-            "Instance %d: StandBy on task %s, start at %d, stops at %d, duration of %d", 
-            instance, idBpmn, startTime, stopTime, time
-        );
-
-        sb.append("\n---------------------------------");
-        sb.append("\n- [STANDBY VIOLATION] Detected:");
-        sb.append("\n").append(violationMessage);
-        sb.append("\n---------------------------------");
-    }
-});
-
 LOG.debug("Creating Generalized SoD Check Expression");
 String sodEPL = "select parent.idBpmn as parentId, " +
                 "sub1.idBpmn as subTask1Id, sub2.idBpmn as subTask2Id, " +

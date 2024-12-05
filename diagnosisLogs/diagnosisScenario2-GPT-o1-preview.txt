@@ -1,0 +1,752 @@
+---
+
+#### **Violation 1:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1pfd2dv)
+- **Subtask ID and Name:** Make a decision about project (Activity_0bcw6ho)
+- **User(s) Involved:** technician2
+- **Instance:** 2
+
+##### **Reason for Occurrence:**
+
+In instance 2, user **technician2** executed the task **"Make a decision about project"** (Activity_0bcw6ho) **three times**, exceeding the maximum allowed threshold of **2 executions** as specified by the UoC constraint in the parent task **Unnamed** (Activity_1pfd2dv).
+
+From the **simulation log**:
+
+- At **startTime=197**, **technician2** performed **"Make a decision about project"**.
+- The task's **numberOfExecutions** is recorded as **3**.
+
+According to the **BPMN diagram**, **Activity_1pfd2dv** is a service task with a UoC constraint (`security:securityType="UoC"`, `security:Mth="2"`) and specifies **"Make a decision about project"** as its subtask. The UoC rule dictates that a user should not execute the subtask more than the maximum threshold (mth), which is **2** in this case.
+
+##### **Suggested Fix:**
+
+1. **Reassign Tasks to Other Users:**
+   - Assign some instances of **"Make a decision about project"** to other qualified users within the **Technical Department**, such as **technician1**, **technician3**, or **technician4**, to prevent any single user from exceeding the execution limit.
+
+2. **Adjust Scheduling to Distribute Workload:**
+   - Review the task scheduling to ensure that workloads are evenly distributed among available users, reducing the likelihood of a single user exceeding the UoC threshold due to availability constraints.
+
+3. **Increase UoC Threshold (If Appropriate):**
+   - If it is operationally necessary for **technician2** to execute the task more than twice, consider increasing the **mth** value in the UoC constraint of **Activity_1pfd2dv** to a higher number that reflects the practical requirements.
+
+---
+
+#### **Violation 2:**
+- **Violation Type:** BoD (Binding of Duty)
+- **Parent Task ID and Name:** Unnamed (Activity_1xtsdxu)
+- **Subtask 1 ID and Name:** Fill out project application (Activity_1lsjzdf)
+- **Subtask 2 ID and Name:** Finish the project (Activity_0rhq2zz)
+- **Users Involved:** company1 and company2
+- **Instance:** 1
+
+##### **Reason for Occurrence:**
+
+In instance 1, the **Binding of Duty** constraint on **Unnamed** (Activity_1xtsdxu) requires that both **"Fill out project application"** (Activity_1lsjzdf) and **"Finish the project"** (Activity_0rhq2zz) be executed by the **same user**. However, these tasks were performed by different users:
+
+- **company1** executed **"Fill out project application"** at **startTime=0**.
+- **company2** executed **"Finish the project"** at **startTime=273**.
+
+From the **simulation log**:
+
+- **[Task, name=Fill out project application, id_bpmn=Activity_1lsjzdf, userTask=company1, instance=1]**
+- **[Task, name=Finish the project, id_bpmn=Activity_0rhq2zz, userTask=company2, instance=1]**
+
+According to the **BPMN diagram**, **Activity_1xtsdxu** is a service task with a BoD constraint (`security:securityType="BoD"`), linking **"Fill out project application"** and **"Finish the project"**. The BoD rule mandates that both tasks must be performed by the same user to maintain consistency and accountability.
+
+##### **Suggested Fix:**
+
+1. **Enforce Consistent User Assignment:**
+   - Implement logic in the task assignment system to ensure that the user who starts the project application (**"Fill out project application"**) is the same user who finishes the project (**"Finish the project"**) in each instance.
+
+2. **Modify Task Assignment Policies:**
+   - Update assignment policies to prioritize assigning the same user to both tasks unless exceptional circumstances prevent it.
+
+3. **Enhance Communication Between Departments:**
+   - Improve coordination between the teams responsible for assigning tasks to ensure adherence to BoD constraints.
+
+---
+
+#### **Violation 3:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1pfd2dv)
+- **Subtask ID and Name:** Make a decision about project (Activity_0bcw6ho)
+- **User(s) Involved:** allLane2
+- **Instance:** 3
+
+##### **Reason for Occurrence:**
+
+In instance 3, user **allLane2** executed **"Make a decision about project"** (Activity_0bcw6ho) **three times**, exceeding the UoC constraint of **2 maximum executions** set in the parent task **Unnamed** (Activity_1pfd2dv).
+
+From the **simulation log**:
+
+- At **startTime=305**, **allLane2** performed **"Make a decision about project"**.
+- The **Total number of executions (accumulated)** for **allLane2** is **3**.
+
+The **BPMN diagram** indicates that **Activity_1pfd2dv** has a UoC constraint (`security:Mth="2"`) on its subtask **"Make a decision about project"**, limiting the number of executions per user.
+
+##### **Suggested Fix:**
+
+1. **Distribute Executions Among Users:**
+   - Assign some executions of **"Make a decision about project"** to other users like **technician1**, **technician3**, or other qualified personnel to comply with the UoC constraint.
+
+2. **Adjust User Workload:**
+   - Evaluate the workload on **allLane2** to prevent over-assignment that leads to UoC violations.
+
+3. **Review UoC Threshold:**
+   - If business processes require a single user to perform the task more frequently, consider increasing the **mth** value in the UoC constraint after assessing the risks.
+
+---
+
+#### **Violation 4:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1fx8kp5)
+- **Subtask ID and Name:** Evaluate project quality (Activity_1twduio)
+- **User(s) Involved:** evaluator2
+- **Instance:** 1
+
+##### **Reason for Occurrence:**
+
+User **evaluator2** executed **"Evaluate project quality"** (Activity_1twduio) **three times** in instance 1, exceeding the UoC constraint of **1 maximum execution** specified in the parent task **Unnamed** (Activity_1fx8kp5).
+
+From the **simulation log**:
+
+- At **startTime=336**, **evaluator2** performed **"Evaluate project quality"** with **numberOfExecutions=3**.
+
+The **BPMN diagram** shows that **Activity_1fx8kp5** has a UoC constraint (`security:Mth="1"`) on **"Evaluate project quality"**, limiting each user to a single execution per instance.
+
+##### **Suggested Fix:**
+
+1. **Limit Task Execution Per User:**
+   - Ensure that **evaluator2** executes **"Evaluate project quality"** only once per instance.
+
+2. **Utilize Other Evaluators:**
+   - Assign additional qualified evaluators such as **evaluator1**, **evaluator3**, or **evaluator4** to handle the remaining executions of the task.
+
+3. **Reassess UoC Threshold (If Necessary):**
+   - If operational requirements necessitate multiple executions by a single evaluator, consider increasing the UoC threshold after evaluating potential risks.
+
+---
+
+#### **Violation 5:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1pfd2dv)
+- **Subtask ID and Name:** Make a decision about project (Activity_0bcw6ho)
+- **User(s) Involved:** technician2
+- **Instance:** 4
+
+##### **Reason for Occurrence:**
+
+In instance 4, **technician2** executed **"Make a decision about project"** (Activity_0bcw6ho) **three times**, exceeding the UoC limit of **2 executions** set in **Activity_1pfd2dv**.
+
+From the **simulation log**:
+
+- At **startTime=374**, **technician2** performed **"Make a decision about project"**.
+- The **Total number of executions** by **technician2** is **3**.
+
+This violates the UoC constraint defined in the **BPMN diagram** for **Activity_1pfd2dv** (`security:Mth="2"`).
+
+##### **Suggested Fix:**
+
+1. **Assign Tasks to Other Technicians:**
+   - Distribute some executions of the task to other technicians to comply with the UoC threshold.
+
+2. **Balance Workload:**
+   - Adjust task assignments to prevent overloading **technician2**.
+
+3. **Update UoC Constraint (If Justified):**
+   - Consider increasing the **mth** value if multiple executions by the same user are necessary and do not compromise security.
+
+---
+
+#### **Violation 6:**
+- **Violation Type:** BoD (Binding of Duty)
+- **Parent Task ID and Name:** Unnamed (Activity_1xtsdxu)
+- **Subtask 1 ID and Name:** Finish the project (Activity_0rhq2zz)
+- **Subtask 2 ID and Name:** Fill out project application (Activity_1lsjzdf)
+- **Users Involved:** company1 and company2
+- **Instance:** 2
+
+##### **Reason for Occurrence:**
+
+In instance 2, the BoD constraint requires that **"Finish the project"** (Activity_0rhq2zz) and **"Fill out project application"** (Activity_1lsjzdf) be performed by the same user. However:
+
+- **company2** executed **"Fill out project application"** at **startTime=60**.
+- **company1** executed **"Finish the project"** at **startTime=374**.
+
+This violates the BoD constraint in **Activity_1xtsdxu** as per the **BPMN diagram**.
+
+##### **Suggested Fix:**
+
+1. **Ensure Same User for Both Tasks:**
+   - Assign both tasks to either **company1** or **company2** in instance 2.
+
+2. **Implement Automated Checks:**
+   - Use system checks to enforce BoD constraints during task assignment.
+
+3. **Improve Coordination:**
+   - Enhance communication protocols to prevent different users from being assigned to bound tasks.
+
+---
+
+#### **Violation 7:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1pfd2dv)
+- **Subtask ID and Name:** Make a decision about project (Activity_0bcw6ho)
+- **User(s) Involved:** allLane1
+- **Instance:** 5
+
+##### **Reason for Occurrence:**
+
+User **allLane1** executed **"Make a decision about project"** **three times** in instance 5, surpassing the UoC threshold of **2**.
+
+From the **simulation log**:
+
+- At **startTime=415**, **allLane1** performed **"Make a decision about project"**.
+- The **Total number of executions** is **3**.
+
+This breaches the UoC constraint in **Activity_1pfd2dv** as per the **BPMN diagram**.
+
+##### **Suggested Fix:**
+
+1. **Diversify Task Assignments:**
+   - Allocate some executions to other users in the "Technical Department".
+
+2. **Monitor Execution Counts:**
+   - Implement real-time monitoring to prevent users from exceeding execution limits.
+
+3. **Reevaluate UoC Limit:**
+   - Adjust the **mth** value if necessary, ensuring it aligns with operational needs without compromising control measures.
+
+---
+
+#### **Violation 8:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1fx8kp5)
+- **Subtask ID and Name:** Evaluate project quality (Activity_1twduio)
+- **User(s) Involved:** evaluator2
+- **Instance:** 2
+
+##### **Reason for Occurrence:**
+
+In instance 2, **evaluator2** executed **"Evaluate project quality"** **three times**, exceeding the UoC limit of **1**.
+
+From the **simulation log**:
+
+- At **startTime=439**, **evaluator2** performed **"Evaluate project quality"** with **numberOfExecutions=3**.
+
+This violates the UoC constraint in **Activity_1fx8kp5** (`security:Mth="1"`).
+
+##### **Suggested Fix:**
+
+1. **Limit Evaluator's Executions:**
+   - Restrict **evaluator2** to a single execution per instance.
+
+2. **Assign Other Evaluators:**
+   - Utilize other evaluators for additional executions.
+
+3. **Adjust UoC Threshold (If Needed):**
+   - Consider increasing the limit after careful evaluation.
+
+---
+
+#### **Violation 9:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1fx8kp5)
+- **Subtask ID and Name:** Evaluate project quality (Activity_1twduio)
+- **User(s) Involved:** evaluator1
+- **Instance:** 3
+
+##### **Reason for Occurrence:**
+
+User **evaluator1** executed **"Evaluate project quality"** **three times** in instance 3, exceeding the maximum allowed of **1**.
+
+From the **simulation log**:
+
+- At **startTime=509**, **evaluator1** performed **"Evaluate project quality"** with **numberOfExecutions=3**.
+
+This breaches the UoC constraint in **Activity_1fx8kp5**.
+
+##### **Suggested Fix:**
+
+1. **Restrict Execution Count:**
+   - Ensure **evaluator1** does not exceed one execution per instance.
+
+2. **Engage Additional Evaluators:**
+   - Assign tasks to other evaluators to distribute workload.
+
+3. **Review UoC Policy:**
+   - Adjust the threshold if operational demands justify it.
+
+---
+
+#### **Violation 10:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1pfd2dv)
+- **Subtask ID and Name:** Make a decision about project (Activity_0bcw6ho)
+- **User(s) Involved:** allLane1
+- **Instance:** 6
+
+##### **Reason for Occurrence:**
+
+In instance 6, **allLane1** executed **"Make a decision about project"** **three times**, violating the UoC limit of **2**.
+
+From the **simulation log**:
+
+- At **startTime=524**, **allLane1** performed **"Make a decision about project"**.
+- The **Total number of executions** is **3**.
+
+This violates the UoC constraint in **Activity_1pfd2dv**.
+
+##### **Suggested Fix:**
+
+1. **Redistribute Task Executions:**
+   - Assign tasks to other available users to comply with the UoC limit.
+
+2. **Implement Monitoring:**
+   - Use monitoring tools to alert when a user is approaching the execution limit.
+
+3. **Consider Threshold Adjustment:**
+   - If necessary, increase the **mth** value responsibly.
+
+---
+
+#### **Violation 11:**
+- **Violation Type:** BoD (Binding of Duty)
+- **Parent Task ID and Name:** Unnamed (Activity_0xcfjgn)
+- **Subtask 1 ID and Name:** Add research groups (Activity_1u4k5de)
+- **Subtask 2 ID and Name:** Refund (Activity_1p7rey7)
+- **Users Involved:** technician1 and company2
+- **Instance:** 1
+
+##### **Reason for Occurrence:**
+
+In instance 1, the BoD constraint on **Activity_0xcfjgn** requires **"Add research groups"** and **"Refund"** to be performed by the same user. However:
+
+- **technician1** executed **"Add research groups"**.
+- **company2** executed **"Refund"**.
+
+From the **simulation log**:
+
+- **[Task, name=Add research groups, id_bpmn=Activity_1u4k5de, userTask=technician1, instance=1]**
+- **[Task, name=Refund, id_bpmn=Activity_1p7rey7, userTask=company2, instance=1]**
+
+This violates the BoD constraint in **Activity_0xcfjgn** as per the **BPMN diagram**.
+
+##### **Suggested Fix:**
+
+1. **Assign Both Tasks to Same User:**
+   - Ensure that **technician1** or **company2** performs both tasks.
+
+2. **Revise Assignment Logic:**
+   - Implement rules to prevent assignment of bound tasks to different users.
+
+3. **Improve Task Allocation Processes:**
+   - Enhance the system to automatically enforce BoD constraints.
+
+---
+
+#### **Violation 12:**
+- **Violation Type:** BoD (Binding of Duty)
+- **Parent Task ID and Name:** Unnamed (Activity_1xtsdxu)
+- **Subtask 1 ID and Name:** Finish the project (Activity_0rhq2zz)
+- **Subtask 2 ID and Name:** Fill out project application (Activity_1lsjzdf)
+- **Users Involved:** company1 and company2
+- **Instance:** 4
+
+##### **Reason for Occurrence:**
+
+In instance 4, **company1** and **company2** performed the tasks bound by BoD constraint in **Activity_1xtsdxu**, violating the requirement for the same user to perform both.
+
+From the **simulation log**:
+
+- **company2** executed **"Fill out project application"** at **startTime=180**.
+- **company1** executed **"Finish the project"** at **startTime=581**.
+
+##### **Suggested Fix:**
+
+1. **Ensure User Consistency:**
+   - Assign both tasks to either **company1** or **company2**.
+
+2. **Automate Enforcement of BoD:**
+   - Use system rules to prevent assignment of these tasks to different users.
+
+3. **Improve Scheduling and Coordination:**
+   - Enhance communication between departments to adhere to BoD constraints.
+
+---
+
+#### **Violation 13:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1pfd2dv)
+- **Subtask ID and Name:** Make a decision about project (Activity_0bcw6ho)
+- **User(s) Involved:** technician1
+- **Instance:** 7
+
+##### **Reason for Occurrence:**
+
+User **technician1** executed **"Make a decision about project"** **three times** in instance 7, exceeding the UoC limit of **2**.
+
+From the **simulation log**:
+
+- At **startTime=585**, **technician1** performed **"Make a decision about project"**.
+- **Total executions** by **technician1** are **3**.
+
+This violates the UoC constraint in **Activity_1pfd2dv**.
+
+##### **Suggested Fix:**
+
+1. **Distribute Tasks Among Technicians:**
+   - Assign some tasks to other technicians.
+
+2. **Monitor User Workload:**
+   - Prevent over-assignment to a single user.
+
+3. **Adjust UoC Threshold (If Appropriate):**
+   - Increase the **mth** value if justified.
+
+---
+
+#### **Violation 14:**
+- **Violation Type:** BoD (Binding of Duty)
+- **Parent Task ID and Name:** Unnamed (Activity_1xtsdxu)
+- **Subtask 1 ID and Name:** Finish the project (Activity_0rhq2zz)
+- **Subtask 2 ID and Name:** Fill out project application (Activity_1lsjzdf)
+- **Users Involved:** company2 and company1
+- **Instance:** 5
+
+##### **Reason for Occurrence:**
+
+In instance 5, **company1** and **company2** performed the bound tasks separately, violating the BoD constraint in **Activity_1xtsdxu**.
+
+From the **simulation log**:
+
+- **company1** executed **"Fill out project application"** at **startTime=240**.
+- **company2** executed **"Finish the project"** at **startTime=624**.
+
+##### **Suggested Fix:**
+
+1. **Assign Tasks to the Same Company:**
+   - Ensure both tasks are assigned to either **company1** or **company2**.
+
+2. **Enforce BoD Constraints Systematically:**
+   - Implement checks to enforce consistent user assignments.
+
+3. **Enhance Coordination Mechanisms:**
+   - Improve inter-departmental communication.
+
+---
+
+#### **Violation 15:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1fx8kp5)
+- **Subtask ID and Name:** Evaluate project quality (Activity_1twduio)
+- **User(s) Involved:** evaluator1
+- **Instance:** 4
+
+##### **Reason for Occurrence:**
+
+**evaluator1** executed **"Evaluate project quality"** **three times** in instance 4, exceeding the UoC limit of **1**.
+
+From the **simulation log**:
+
+- At **startTime=637**, **evaluator1** performed **"Evaluate project quality"** with **numberOfExecutions=3**.
+
+This violates the UoC constraint in **Activity_1fx8kp5**.
+
+##### **Suggested Fix:**
+
+1. **Limit Executions per User:**
+   - Restrict **evaluator1** to one execution per instance.
+
+2. **Utilize Other Evaluators:**
+   - Assign tasks to other evaluators.
+
+3. **Review UoC Threshold:**
+   - Adjust if necessary after risk assessment.
+
+---
+
+#### **Violation 16:**
+- **Violation Type:** BoD (Binding of Duty)
+- **Parent Task ID and Name:** Unnamed (Activity_0xcfjgn)
+- **Subtask 1 ID and Name:** Refund (Activity_1p7rey7)
+- **Subtask 2 ID and Name:** Add research groups (Activity_1u4k5de)
+- **Users Involved:** company1 and allLane2
+- **Instance:** 2
+
+##### **Reason for Occurrence:**
+
+In instance 2, **company1** and **allLane2** performed the BoD-bound tasks separately:
+
+- **company1** executed **"Refund"**.
+- **allLane2** executed **"Add research groups"**.
+
+This violates the BoD constraint in **Activity_0xcfjgn**.
+
+##### **Suggested Fix:**
+
+1. **Ensure Single User Assignment:**
+   - Assign both tasks to either **company1** or **allLane2**.
+
+2. **Automate BoD Enforcement:**
+   - Use systems to prevent separate assignment.
+
+3. **Improve Task Allocation Policies:**
+   - Adjust policies to respect BoD constraints.
+
+---
+
+#### **Violation 17:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1pfd2dv)
+- **Subtask ID and Name:** Make a decision about project (Activity_0bcw6ho)
+- **User(s) Involved:** allLane2
+- **Instance:** 8
+
+##### **Reason for Occurrence:**
+
+User **allLane2** executed **"Make a decision about project"** **three times** in instance 8, exceeding the UoC limit of **2**.
+
+From the **simulation log**:
+
+- At **startTime=643**, **allLane2** performed **"Make a decision about project"**.
+- **Total executions** are **3**.
+
+This violates the UoC constraint in **Activity_1pfd2dv**.
+
+##### **Suggested Fix:**
+
+1. **Assign Tasks to Other Users:**
+   - Distribute tasks among other qualified users.
+
+2. **Monitor Execution Counts:**
+   - Implement alerts for approaching UoC limits.
+
+3. **Adjust Threshold if Necessary:**
+   - Increase **mth** value responsibly if needed.
+
+---
+
+#### **Violation 18:**
+- **Violation Type:** SoD (Separation of Duty)
+- **Parent Task ID and Name:** Unnamed (Activity_0xf32a2)
+- **Subtask 1 ID and Name:** Add companies (Activity_17ptqba)
+- **Subtask 2 ID and Name:** Evaluate project (Activity_1conkxb)
+- **User Involved:** allLane1
+- **Instance:** 10
+
+##### **Reason for Occurrence:**
+
+In instance 10, **allLane1** executed both **"Add companies"** and **"Evaluate project"**, violating the SoD constraint in **Activity_0xf32a2** that mandates different users for these tasks.
+
+From the **simulation log**:
+
+- **[Task, name=Add companies, id_bpmn=Activity_17ptqba, userTask=allLane1, instance=10]**
+- **[Task, name=Evaluate project, id_bpmn=Activity_1conkxb, userTask=allLane1, instance=10]**
+
+The **BPMN diagram** defines **Activity_0xf32a2** with a SoD constraint (`security:securityType="SoD"`).
+
+##### **Suggested Fix:**
+
+1. **Assign Different Users:**
+   - Ensure that **"Evaluate project"** is performed by a user other than **allLane1**.
+
+2. **Enforce SoD Rules:**
+   - Implement system checks to prevent a single user from performing both tasks.
+
+3. **Increase Available Resources:**
+   - If user availability is limited, consider adding more personnel.
+
+---
+
+#### **Violation 19:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1fx8kp5)
+- **Subtask ID and Name:** Evaluate project quality (Activity_1twduio)
+- **User(s) Involved:** evaluator2
+- **Instance:** 5
+
+##### **Reason for Occurrence:**
+
+**evaluator2** executed **"Evaluate project quality"** **three times** in instance 5, exceeding the UoC limit of **1**.
+
+From the **simulation log**:
+
+- At **startTime=688**, **evaluator2** performed **"Evaluate project quality"** with **numberOfExecutions=3**.
+
+This violates the UoC constraint in **Activity_1fx8kp5**.
+
+##### **Suggested Fix:**
+
+1. **Limit User to One Execution:**
+   - Restrict **evaluator2** to a single execution per instance.
+
+2. **Assign Other Evaluators:**
+   - Distribute tasks among other evaluators.
+
+3. **Consider Threshold Adjustment:**
+   - Increase **mth** if justified.
+
+---
+
+#### **Violation 20:**
+- **Violation Type:** BoD (Binding of Duty)
+- **Parent Task ID and Name:** Unnamed (Activity_0xcfjgn)
+- **Subtask 1 ID and Name:** Refund (Activity_1p7rey7)
+- **Subtask 2 ID and Name:** Add research groups (Activity_1u4k5de)
+- **Users Involved:** company2 and technician1
+- **Instance:** 5
+
+##### **Reason for Occurrence:**
+
+In instance 5, **company2** and **technician1** performed BoD-bound tasks separately, violating the constraint in **Activity_0xcfjgn**.
+
+##### **Suggested Fix:**
+
+1. **Assign Both Tasks to Same User:**
+   - Either **company2** or **technician1** should perform both tasks.
+
+2. **Enforce Assignment Policies:**
+   - Implement rules to prevent violations.
+
+3. **Improve Task Coordination:**
+   - Enhance communication between departments.
+
+---
+
+#### **Violation 21:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1fx8kp5)
+- **Subtask ID and Name:** Evaluate project quality (Activity_1twduio)
+- **User(s) Involved:** evaluator1
+- **Instance:** 9
+
+##### **Reason for Occurrence:**
+
+User **evaluator1** executed **"Evaluate project quality"** **three times** in instance 9, exceeding the UoC limit of **1**.
+
+From the **simulation log**:
+
+- At **startTime=901**, **evaluator1** performed **"Evaluate project quality"**.
+
+This violates the UoC constraint in **Activity_1fx8kp5**.
+
+##### **Suggested Fix:**
+
+1. **Restrict Execution Count:**
+   - Limit **evaluator1** to one execution.
+
+2. **Assign to Other Evaluators:**
+   - Utilize other available evaluators.
+
+3. **Adjust UoC Threshold:**
+   - Increase if necessary after evaluation.
+
+---
+
+#### **Violation 22:**
+- **Violation Type:** UoC (Usage of Control)
+- **Parent Task ID and Name:** Unnamed (Activity_1fx8kp5)
+- **Subtask ID and Name:** Evaluate project quality (Activity_1twduio)
+- **User(s) Involved:** evaluator2
+- **Instance:** 10
+
+##### **Reason for Occurrence:**
+
+In instance 10, **evaluator2** executed **"Evaluate project quality"** **three times**, exceeding the UoC limit.
+
+From the **simulation log**:
+
+- At **startTime=918**, **evaluator2** performed **"Evaluate project quality"**.
+
+This violates the UoC constraint in **Activity_1fx8kp5**.
+
+##### **Suggested Fix:**
+
+1. **Limit Evaluator's Executions:**
+   - Restrict **evaluator2** to one execution.
+
+2. **Assign to Other Evaluators:**
+   - Distribute tasks among others.
+
+3. **Review UoC Threshold:**
+   - Adjust if operationally necessary.
+
+---
+
+#### **Violation 23:**
+- **Violation Type:** BoD (Binding of Duty)
+- **Parent Task ID and Name:** Unnamed (Activity_0xcfjgn)
+- **Subtask 1 ID and Name:** Refund (Activity_1p7rey7)
+- **Subtask 2 ID and Name:** Add research groups (Activity_1u4k5de)
+- **Users Involved:** company1 and allLane1
+- **Instance:** 6
+
+##### **Reason for Occurrence:**
+
+In instance 6, **company1** and **allLane1** performed the BoD-bound tasks separately, violating the constraint.
+
+##### **Suggested Fix:**
+
+1. **Assign Both Tasks to One User:**
+   - Ensure tasks are performed by either **company1** or **allLane1**.
+
+2. **Implement Assignment Rules:**
+   - Enforce BoD constraints in task assignments.
+
+3. **Enhance Coordination:**
+   - Improve inter-departmental communication.
+
+---
+
+#### **Violation 24:**
+- **Violation Type:** BoD (Binding of Duty)
+- **Parent Task ID and Name:** Unnamed (Activity_0xcfjgn)
+- **Subtask 1 ID and Name:** Refund (Activity_1p7rey7)
+- **Subtask 2 ID and Name:** Add research groups (Activity_1u4k5de)
+- **Users Involved:** company2 and technician1
+- **Instance:** 7
+
+##### **Reason for Occurrence:**
+
+In instance 7, the tasks were performed by **company2** and **technician1**, violating the BoD constraint.
+
+##### **Suggested Fix:**
+
+1. **Assign Tasks to Same User:**
+   - Ensure both tasks are assigned to one user.
+
+2. **Automate Enforcement:**
+   - Use system rules to prevent such violations.
+
+3. **Improve Assignment Processes:**
+   - Adjust policies to adhere to BoD constraints.
+
+---
+
+#### **Violation 25:**
+- **Violation Type:** BoD (Binding of Duty)
+- **Parent Task ID and Name:** Unnamed (Activity_0xcfjgn)
+- **Subtask 1 ID and Name:** Refund (Activity_1p7rey7)
+- **Subtask 2 ID and Name:** Add research groups (Activity_1u4k5de)
+- **Users Involved:** allLane1 and technician2
+- **Instance:** 10
+
+##### **Reason for Occurrence:**
+
+In instance 10, **allLane1** and **technician2** performed the BoD-bound tasks separately, violating the constraint.
+
+##### **Suggested Fix:**
+
+1. **Ensure Single User Assignment:**
+   - Assign both tasks to either **allLane1** or **technician2**.
+
+2. **Implement Assignment Checks:**
+    - Use automated checks to enforce BoD constraints.
+
+3. **Enhance Communication:**
+    - Improve coordination to prevent assignment conflicts.
+
+---
+
+**Note:** In all instances, it is crucial to balance operational efficiency with compliance to security constraints. Adjustments to constraints should be carefully evaluated to maintain process integrity while ensuring practical feasibility.

@@ -1,0 +1,119 @@
+### **Violation 1:**
+- **Violation Type:** "UoC"
+- **Parent Task ID and Name:** "Make a decision about project" (Activity_1pfd2dv)
+- **Subtask(s) ID and Name:** "Make a decision about project" (Activity_0bcw6ho)
+- **User(s) Involved:** "technician2"
+
+##### **Reason for Occurrence:**
+The violation occurred because technician2 executed the task "Make a decision about project" (Activity_0bcw6ho) more than the allowed threshold of 2 times, as indicated in the simulation log at timestamps 216, 374, and 585 for instances 2, 4, and 7, respectively. This task is under the parent task "Make a decision about project" (Activity_1pfd2dv), which has a UoC constraint set to 2.
+
+##### **Suggested Fix:**
+To address this violation, consider increasing the UoC threshold for task "Make a decision about project" (Activity_0bcw6ho) if the current limit is too restrictive for the workflow. Alternatively, reassign some instances of this task to other users to distribute the workload more evenly and prevent exceeding the threshold.
+
+### **Violation 2:**
+- **Violation Type:** "UoC"
+- **Parent Task ID and Name:** "Make a decision about project" (Activity_1pfd2dv)
+- **Subtask(s) ID and Name:** "Make a decision about project" (Activity_0bcw6ho)
+- **User(s) Involved:** "allLane2"
+
+##### **Reason for Occurrence:**
+This violation occurred because allLane2 executed the task "Make a decision about project" (Activity_0bcw6ho) more than the allowed threshold of 2 times, as seen in the simulation log at timestamps 305 and 643 for instances 3 and 8, respectively. Similar to Violation 1, this task falls under the parent task "Make a decision about project" (Activity_1pfd2dv) with a UoC constraint of 2.
+
+##### **Suggested Fix:**
+Consider adjusting the UoC threshold for task "Make a decision about project" (Activity_0bcw6ho) to accommodate the actual workflow needs. Alternatively, redistribute the task assignments among users to avoid exceeding the threshold.
+
+### **Violation 3:**
+- **Violation Type:** "UoC"
+- **Parent Task ID and Name:** "Make a decision about project" (Activity_1pfd2dv)
+- **Subtask(s) ID and Name:** "Make a decision about project" (Activity_0bcw6ho)
+- **User(s) Involved:** "allLane1"
+
+##### **Reason for Occurrence:**
+The violation occurred because allLane1 executed the task "Make a decision about project" (Activity_0bcw6ho) more than the allowed threshold of 2 times, as shown in the simulation log at timestamps 415, 732, and 1006 for instances 5, 10, and 10, respectively. This task is also under the parent task "Make a decision about project" (Activity_1pfd2dv) with a UoC constraint.
+
+##### **Suggested Fix:**
+Adjust the UoC threshold for task "Make a decision about project" (Activity_0bcw6ho) to better reflect the workflow requirements. Alternatively, reassign tasks among users to prevent threshold violations.
+
+### **Violation 4:**
+- **Violation Type:** "UoC"
+- **Parent Task ID and Name:** "Evaluate project quality" (Activity_1fx8kp5)
+- **Subtask(s) ID and Name:** "Evaluate project quality" (Activity_1twduio)
+- **User(s) Involved:** "evaluator2"
+
+##### **Reason for Occurrence:**
+Evaluator2 executed the task "Evaluate project quality" (Activity_1twduio) more than the allowed threshold of 1 time, as indicated in the simulation log at timestamps 336, 439, and 688 for instances 1, 2, and 5, respectively. This task is under the parent task "Evaluate project quality" (Activity_1fx8kp5), which has a UoC constraint set to 1.
+
+##### **Suggested Fix:**
+Consider increasing the UoC threshold for task "Evaluate project quality" (Activity_1twduio) if necessary for the workflow. Alternatively, redistribute task assignments to avoid exceeding the threshold.
+
+### **Violation 5:**
+- **Violation Type:** "UoC"
+- **Parent Task ID and Name:** "Evaluate project quality" (Activity_1fx8kp5)
+- **Subtask(s) ID and Name:** "Evaluate project quality" (Activity_1twduio)
+- **User(s) Involved:** "evaluator1"
+
+##### **Reason for Occurrence:**
+This violation occurred because evaluator1 executed the task "Evaluate project quality" (Activity_1twduio) more than the allowed threshold of 1 time, as seen in the simulation log at timestamps 509, 637, and 901 for instances 3, 4, and 9, respectively. Similar to Violation 4, this task falls under the parent task "Evaluate project quality" (Activity_1fx8kp5) with a UoC constraint of 1.
+
+##### **Suggested Fix:**
+Adjust the UoC threshold for task "Evaluate project quality" (Activity_1twduio) according to the workflow needs. Alternatively, reassign tasks among users to prevent threshold violations.
+
+### **Violation 6:**
+- **Violation Type:** "UoC"
+- **Parent Task ID and Name:** "Evaluate project quality" (Activity_1fx8kp5)
+- **Subtask(s) ID and Name:** "Evaluate project quality" (Activity_1twduio)
+- **User(s) Involved:** "allLane1"
+
+##### **Reason for Occurrence:**
+The violation occurred because allLane1 executed the task "Evaluate project quality" (Activity_1twduio) more than the allowed threshold of 1 time, as shown in the simulation log at timestamp 824 for instance 8. This task is also under the parent task "Evaluate project quality" (Activity_1fx8kp5) with a UoC constraint.
+
+##### **Suggested Fix:**
+Consider adjusting the UoC threshold for task "Evaluate project quality" (Activity_1twduio) to accommodate the workflow. Alternatively, redistribute task assignments to avoid exceeding the threshold.
+
+### **Violation 7:**
+- **Violation Type:** "BoD"
+- **Parent Task ID and Name:** "Unnamed" (Activity_1xtsdxu)
+- **Subtask(s) ID and Name:** "Finish the project" (Activity_0rhq2zz) and "Fill out project application" (Activity_1lsjzdf)
+- **User(s) Involved:** "company1" and "company2"
+
+##### **Reason for Occurrence:**
+This violation occurred because the tasks "Finish the project" (Activity_0rhq2zz) and "Fill out project application" (Activity_1lsjzdf) were not executed by the same user, violating the BoD constraint set by the parent task "Unnamed" (Activity_1xtsdxu). The simulation log shows instances where these tasks were executed by different users, such as at timestamps 273 and 101 for instance 1.
+
+##### **Suggested Fix:**
+Ensure that tasks "Finish the project" (Activity_0rhq2zz) and "Fill out project application" (Activity_1lsjzdf) are assigned to the same user for each instance to comply with the BoD constraint.
+
+### **Violation 8:**
+- **Violation Type:** "BoD"
+- **Parent Task ID and Name:** "Unnamed" (Activity_0xcfjgn)
+- **Subtask(s) ID and Name:** "Refund" (Activity_1p7rey7) and "Add research groups" (Activity_1u4k5de)
+- **User(s) Involved:** Various users
+
+##### **Reason for Occurrence:**
+The violation occurred because the tasks "Refund" (Activity_1p7rey7) and "Add research groups" (Activity_1u4k5de) were not executed by the same user, violating the BoD constraint set by the parent task "Unnamed" (Activity_0xcfjgn). The simulation log shows multiple instances where these tasks were executed by different users.
+
+##### **Suggested Fix:**
+Ensure that tasks "Refund" (Activity_1p7rey7) and "Add research groups" (Activity_1u4k5de) are assigned to the same user for each instance to comply with the BoD constraint.
+
+### **Violation 9:**
+- **Violation Type:** "SoD"
+- **Parent Task ID and Name:** "Unnamed" (Activity_0xf32a2)
+- **Subtask(s) ID and Name:** "Add companies" (Activity_17ptqba) and "Evaluate project" (Activity_1conkxb)
+- **User(s) Involved:** "allLane1"
+
+##### **Reason for Occurrence:**
+This violation occurred because the same user, allLane1, executed both tasks "Add companies" (Activity_17ptqba) and "Evaluate project" (Activity_1conkxb), violating the SoD constraint set by the parent task "Unnamed" (Activity_0xf32a2). The simulation log shows an instance of this violation at timestamp 10 for instance 10.
+
+##### **Suggested Fix:**
+Ensure that tasks "Add companies" (Activity_17ptqba) and "Evaluate project" (Activity_1conkxb) are assigned to different users for each instance to comply with the SoD constraint.
+
+### **Violation 10:**
+- **Violation Type:** "SoD"
+- **Parent Task ID and Name:** "Unnamed" (Activity_0oz806n)
+- **Subtask(s) ID and Name:** "Evaluate refund plan" (Activity_03brord) and "Decide external auditing" (Activity_03d8opo)
+- **User(s) Involved:** "ecofinantial1"
+
+##### **Reason for Occurrence:**
+The violation occurred because the same user, ecofinantial1, executed both tasks "Evaluate refund plan" (Activity_03brord) and "Decide external auditing" (Activity_03d8opo), violating the SoD constraint set by the parent task "Unnamed" (Activity_0oz806n). The simulation log shows an instance of this violation at timestamp 6 for instance 6.
+
+##### **Suggested Fix:**
+Ensure that tasks "Evaluate refund plan" (Activity_03brord) and "Decide external auditing" (Activity_03d8opo) are assigned to different users for each instance to comply with the SoD constraint.

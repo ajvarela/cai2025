@@ -4,6 +4,7 @@ import 'bpmn-js/dist/assets/bpmn-font/css/bpmn-embedded.css';
 import '@bpmn-io/properties-panel/assets/properties-panel.css';
 import '../style.less';
 
+import { marked } from 'marked';
 import BpmnModeler from 'bpmn-js/lib/Modeler';
 import { debounce } from 'min-dash';
 import { BpmnPropertiesPanelModule, BpmnPropertiesProviderModule } from 'bpmn-js-properties-panel';
@@ -181,45 +182,76 @@ $('#js-download-esper').off('click').on('click', async function(e) {
   e.stopPropagation();
   e.stopImmediatePropagation();
 
-  document.querySelector('.modal-overlay').style.display = 'block';
-  document.querySelector('#modal-content').textContent = 'Processing simulation...';
-
-  try {
-      const content = await exportToEsper(bpmnModeler);
-
-      const saveResponse = await fetch('http://localhost:3000/save-esper-file', {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ content, filename: 'esperTasks.txt' }),
-      })
-      .then(response => response.json())
-      .then(data => {
-          if (!data.content.trim()) {
-              document.querySelector('#modal-content').textContent = 'No violations found.';
-          } else {
-              document.querySelector('#modal-content').textContent = data.content;
-          }
-          document.querySelector('.modal-overlay').style.display = 'block';
-      })
-      .catch(err => {
-          console.error('Error al obtener violations.txt:', err);
-          alert('Error al obtener violations.txt');
-      });
-
-      if (!saveResponse.ok) {
-          throw new Error(`Error al guardar el archivo: ${saveResponse.statusText}`);
-      }
-      
-  } catch (err) {
-      console.error('Error al exportar a Esper:', err);
-  } finally {
-  }
+  document.querySelector('.instance-modal-overlay').style.display = 'block';
 });
+document.querySelectorAll('.instance-button').forEach(async function(button) {
+  button.addEventListener('click', async function() {
+    const instances = this.getAttribute('data-instances');
+    document.querySelector('.instance-modal-overlay').style.display = 'none';
+    document.querySelector('.modal-overlay').style.display = 'block';
+    try {
+        const content = await exportToEsper(bpmnModeler);
 
+        const saveResponse = await fetch('http://localhost:3000/save-esper-file', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ content, filename: instances }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            const dataGPT4o = data.Gpt4o;
+            const dataGPTo1 = data.Gpto1;
+            const dataLlama = data.Llama405;
+            const htmlGPT4o = marked.parse(dataGPT4o);
+            const htmlGPTo1 = marked.parse(dataGPTo1);
+            const htmlLlama = marked.parse(dataLlama);
+            document.querySelector('#modal2-content-tab1').innerHTML = htmlGPT4o;
+            document.querySelector('#modal2-content-tab2').innerHTML = htmlGPTo1;
+            document.querySelector('#modal2-content-tab3').innerHTML = htmlLlama;
+            document.querySelector('.modal2-overlay').style.display = 'block';
+            document.querySelector('.modal-overlay').style.display = 'none';
+        })
+        .catch(err => {
+            console.error('Error al obtener violations.txt:', err);
+            alert('Error al obtener violations.txt');
+        });
+
+        if (!saveResponse.ok) {
+            throw new Error(`Error al guardar el archivo: ${saveResponse.statusText}`);
+        }
+        
+    } catch (err) {
+      console.error('Error al exportar a Esper:', err);
+    } finally {
+    }
+  });
+});
 document.getElementById('close-modal').addEventListener('click', function() {
   document.querySelector('.modal-overlay').style.display = 'none'; 
+});
+
+document.getElementById('close-modal2').addEventListener('click', function() {
+  document.querySelector('.modal2-overlay').style.display = 'none'; 
+});
+
+document.getElementById('close-instance-modal').addEventListener('click', function() {
+  document.querySelector('.instance-modal-overlay').style.display = 'none'; 
+});
+
+document.querySelectorAll('.tab-button').forEach(function(button) {
+  button.addEventListener('click', function() {
+    var tab = this.dataset.tab;
+    document.querySelectorAll('.tab-button').forEach(function(btn) {
+      btn.classList.remove('active');
+    });
+    this.classList.add('active');
+    document.querySelectorAll('.tab-content').forEach(function(content) {
+      content.classList.remove('active');
+    });
+    document.getElementById(tab + '-content').classList.add('active');
+  });
 });
 
   function downloadDiagram() {

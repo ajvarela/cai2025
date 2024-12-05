@@ -1,64 +1,57 @@
----------------------------------
-- [STANDBY VIOLATION] Detected:
-Instance 5: StandBy on task Activity_1u4k5de, start at 293, stops at 298, duration of 5
----------------------------------
----------------------------------
-- [STANDBY VIOLATION] Detected:
-Instance 5: StandBy on task Activity_17ptqba, start at 293, stops at 299, duration of 6
----------------------------------
----------------------------------
-- [STANDBY VIOLATION] Detected:
-Instance 6: StandBy on task Activity_1u4k5de, start at 352, stops at 356, duration of 4
----------------------------------
----------------------------------
-- [STANDBY VIOLATION] Detected:
-Instance 6: StandBy on task Activity_17ptqba, start at 352, stops at 359, duration of 7
----------------------------------
----------------------------------
-- [STANDBY VIOLATION] Detected:
-Instance 4: StandBy on task Activity_0bcw6ho, start at 367, stops at 373, duration of 6
----------------------------------
----------------------------------
-- [STANDBY VIOLATION] Detected:
-Instance 3: StandBy on task Activity_07uebsf, start at 373, stops at 377, duration of 4
----------------------------------
----------------------------------
-- [STANDBY VIOLATION] Detected:
-Instance 6: StandBy on task Activity_0bcw6ho, start at 471, stops at 474, duration of 3
----------------------------------
----------------------------------
-- [STANDBY VIOLATION] Detected:
-Instance 8: StandBy on task Activity_1u4k5de, start at 476, stops at 481, duration of 5
----------------------------------
----------------------------------
-- [STANDBY VIOLATION] Detected:
-Instance 8: StandBy on task Activity_17ptqba, start at 476, stops at 489, duration of 13
----------------------------------
----------------------------------
-- [STANDBY VIOLATION] Detected:
-Instance 9: StandBy on task Activity_0bcw6ho, start at 629, stops at 642, duration of 13
----------------------------------
----------------------------------
-- [SOD MONITOR] Segregation of Duties violation detected:
-- Parent Task ID: Activity_0oz806n
-- SubTask 1 ID: Activity_03brord
-- SubTask 2 ID: Activity_03d8opo
-- Executed By User: ecofinantial3
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_1lsjzdf
+- SubTask 2 ID: Activity_0rhq2zz
+- Executed By Users: company2 and company1
+- Instance: 1
+
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1i1gel3
+- SubTask 1 ID: Activity_1u4k5de
+- SubTask 2 ID: Activity_1p7rey7
+- Executed By Users: technician4 and company2
+- Instance: 1
+
+- [UOC MONITOR] Usage of Control violation detected:
+- Parent Task ID: Activity_1fx8kp5
+- SubTask ID: Activity_1twduio
+- User(s): evaluator1
+- Total number of executions (accumulated): 3
+- Maximum allowed: 1
+- Instance: 4
+
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1xtsdxu
+- SubTask 1 ID: Activity_0rhq2zz
+- SubTask 2 ID: Activity_1lsjzdf
+- Executed By Users: company3 and company2
 - Instance: 5
----------------------------------
----------------------------------
-- [SOD MONITOR] Segregation of Duties violation detected:
-- Parent Task ID: Activity_0oz806n
-- SubTask 1 ID: Activity_03brord
-- SubTask 2 ID: Activity_03d8opo
-- Executed By User: ecofinantial1
-- Instance: 9
----------------------------------
----------------------------------
-- [SOD MONITOR] Segregation of Duties violation detected:
-- Parent Task ID: Activity_0oz806n
-- SubTask 1 ID: Activity_03brord
-- SubTask 2 ID: Activity_03d8opo
-- Executed By User: ecofinantial2
-- Instance: 8
----------------------------------
+
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1i1gel3
+- SubTask 1 ID: Activity_1p7rey7
+- SubTask 2 ID: Activity_1u4k5de
+- Executed By Users: company4 and technician3
+- Instance: 2
+
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1i1gel3
+- SubTask 1 ID: Activity_1p7rey7
+- SubTask 2 ID: Activity_1u4k5de
+- Executed By Users: company2 and technician1
+- Instance: 3
+
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1i1gel3
+- SubTask 1 ID: Activity_1p7rey7
+- SubTask 2 ID: Activity_1u4k5de
+- Executed By Users: company1 and technician4
+- Instance: 4
+
+- [BOD MONITOR] Binding of Duties violation detected:
+- Parent Task ID: Activity_1i1gel3
+- SubTask 1 ID: Activity_1p7rey7
+- SubTask 2 ID: Activity_1u4k5de
+- Executed By Users: company3 and technician4
+- Instance: 5
+

@@ -1,0 +1,95 @@
+### **Violation 1:**
+- **Violation Type:** BoD
+- **Parent Task ID and Name:** Activity_1xtsdxu (Unnamed)
+- **Subtask(s) ID and Name:** Activity_1lsjzdf (Fill out project application) and Activity_0rhq2zz (Finish the project)
+- **User(s) Involved:** company2 and company1
+
+##### **Reason for Occurrence:**
+The violation occurred because the tasks "Fill out project application" and "Finish the project" were not performed by the same user, violating the Binding of Duty (BoD) constraint. According to the simulation log, at timestamp 0, user "company2" started the task "Fill out project application" (Activity_1lsjzdf), and at timestamp 261, user "company1" completed the task "Finish the project" (Activity_0rhq2zz). The BPMN diagram shows that both tasks are part of the same process and are connected by a sequence flow, indicating that they should be performed by the same user.
+
+##### **Suggested Fix:**
+To resolve this violation, the task "Finish the project" (Activity_0rhq2zz) should be reassigned to user "company2", ensuring that both tasks are performed by the same user. Additionally, the process should be modified to enforce the BoD constraint, ensuring that the same user performs both tasks in the future.
+
+### **Violation 2:**
+- **Violation Type:** BoD
+- **Parent Task ID and Name:** Activity_1i1gel3 (Unnamed)
+- **Subtask(s) ID and Name:** Activity_1u4k5de (Add research groups) and Activity_1p7rey7 (Refund)
+- **User(s) Involved:** technician4 and company2
+
+##### **Reason for Occurrence:**
+The violation occurred because the tasks "Add research groups" and "Refund" were not performed by the same user, violating the Binding of Duty (BoD) constraint. According to the simulation log, at timestamp 131, user "technician3" started the task "Add research groups" (Activity_1u4k5de), and at timestamp 487, user "company2" completed the task "Refund" (Activity_1p7rey7). The BPMN diagram shows that both tasks are part of the same process and are connected by a sequence flow, indicating that they should be performed by the same user.
+
+##### **Suggested Fix:**
+To resolve this violation, the task "Refund" (Activity_1p7rey7) should be reassigned to user "technician4", ensuring that both tasks are performed by the same user. Additionally, the process should be modified to enforce the BoD constraint, ensuring that the same user performs both tasks in the future.
+
+### **Violation 3:**
+- **Violation Type:** UoC
+- **Parent Task ID and Name:** Activity_1fx8kp5 (Unnamed)
+- **Subtask(s) ID and Name:** Activity_1twduio (Evaluate project quality)
+- **User(s) Involved:** evaluator1
+
+##### **Reason for Occurrence:**
+The violation occurred because the task "Evaluate project quality" was executed more times than allowed, violating the Usage of Control (UoC) constraint. According to the simulation log, at timestamp 500, user "evaluator1" executed the task "Evaluate project quality" (Activity_1twduio) for the third time, exceeding the allowed threshold of 1. The BPMN diagram shows that the task has a UoC constraint with a threshold of 1.
+
+##### **Suggested Fix:**
+To resolve this violation, the task "Evaluate project quality" (Activity_1twduio) should be modified to enforce the UoC constraint, ensuring that it is executed only once. Additionally, the process should be modified to prevent the task from being executed multiple times, or the threshold should be increased to allow for multiple executions.
+
+### **Violation 4:**
+- **Violation Type:** BoD
+- **Parent Task ID and Name:** Activity_1xtsdxu (Unnamed)
+- **Subtask(s) ID and Name:** Activity_0rhq2zz (Finish the project) and Activity_1lsjzdf (Fill out project application)
+- **User(s) Involved:** company3 and company2
+
+##### **Reason for Occurrence:**
+The violation occurred because the tasks "Finish the project" and "Fill out project application" were not performed by the same user, violating the Binding of Duty (BoD) constraint. According to the simulation log, at timestamp 240, user "company2" started the task "Fill out project application" (Activity_1lsjzdf), and at timestamp 521, user "company3" completed the task "Finish the project" (Activity_0rhq2zz). The BPMN diagram shows that both tasks are part of the same process and are connected by a sequence flow, indicating that they should be performed by the same user.
+
+##### **Suggested Fix:**
+To resolve this violation, the task "Finish the project" (Activity_0rhq2zz) should be reassigned to user "company2", ensuring that both tasks are performed by the same user. Additionally, the process should be modified to enforce the BoD constraint, ensuring that the same user performs both tasks in the future.
+
+### **Violation 5:**
+- **Violation Type:** BoD
+- **Parent Task ID and Name:** Activity_1i1gel3 (Unnamed)
+- **Subtask(s) ID and Name:** Activity_1p7rey7 (Refund) and Activity_1u4k5de (Add research groups)
+- **User(s) Involved:** company4 and technician3
+
+##### **Reason for Occurrence:**
+The violation occurred because the tasks "Refund" and "Add research groups" were not performed by the same user, violating the Binding of Duty (BoD) constraint. According to the simulation log, at timestamp 131, user "technician3" started the task "Add research groups" (Activity_1u4k5de), and at timestamp 568, user "company4" completed the task "Refund" (Activity_1p7rey7). The BPMN diagram shows that both tasks are part of the same process and are connected by a sequence flow, indicating that they should be performed by the same user.
+
+##### **Suggested Fix:**
+To resolve this violation, the task "Refund" (Activity_1p7rey7) should be reassigned to user "technician3", ensuring that both tasks are performed by the same user. Additionally, the process should be modified to enforce the BoD constraint, ensuring that the same user performs both tasks in the future.
+
+### **Violation 6:**
+- **Violation Type:** BoD
+- **Parent Task ID and Name:** Activity_1i1gel3 (Unnamed)
+- **Subtask(s) ID and Name:** Activity_1p7rey7 (Refund) and Activity_1u4k5de (Add research groups)
+- **User(s) Involved:** company2 and technician1
+
+##### **Reason for Occurrence:**
+The violation occurred because the tasks "Refund" and "Add research groups" were not performed by the same user, violating the Binding of Duty (BoD) constraint. According to the simulation log, at timestamp 131, user "technician1" started the task "Add research groups" (Activity_1u4k5de), and at timestamp 624, user "company2" completed the task "Refund" (Activity_1p7rey7). The BPMN diagram shows that both tasks are part of the same process and are connected by a sequence flow, indicating that they should be performed by the same user.
+
+##### **Suggested Fix:**
+To resolve this violation, the task "Refund" (Activity_1p7rey7) should be reassigned to user "technician1", ensuring that both tasks are performed by the same user. Additionally, the process should be modified to enforce the BoD constraint, ensuring that the same user performs both tasks in the future.
+
+### **Violation 7:**
+- **Violation Type:** BoD
+- **Parent Task ID and Name:** Activity_1i1gel3 (Unnamed)
+- **Subtask(s) ID and Name:** Activity_1p7rey7 (Refund) and Activity_1u4k5de (Add research groups)
+- **User(s) Involved:** company1 and technician4
+
+##### **Reason for Occurrence:**
+The violation occurred because the tasks "Refund" and "Add research groups" were not performed by the same user, violating the Binding of Duty (BoD) constraint. According to the simulation log, at timestamp 131, user "technician4" started the task "Add research groups" (Activity_1u4k5de), and at timestamp 714, user "company1" completed the task "Refund" (Activity_1p7rey7). The BPMN diagram shows that both tasks are part of the same process and are connected by a sequence flow, indicating that they should be performed by the same user.
+
+##### **Suggested Fix:**
+To resolve this violation, the task "Refund" (Activity_1p7rey7) should be reassigned to user "technician4", ensuring that both tasks are performed by the same user. Additionally, the process should be modified to enforce the BoD constraint, ensuring that the same user performs both tasks in the future.
+
+### **Violation 8:**
+- **Violation Type:** BoD
+- **Parent Task ID and Name:** Activity_1i1gel3 (Unnamed)
+- **Subtask(s) ID and Name:** Activity_1p7rey7 (Refund) and Activity_1u4k5de (Add research groups)
+- **User(s) Involved:** company3 and technician4
+
+##### **Reason for Occurrence:**
+The violation occurred because the tasks "Refund" and "Add research groups" were not performed by the same user, violating the Binding of Duty (BoD) constraint. According to the simulation log, at timestamp 131, user "technician4" started the task "Add research groups" (Activity_1u4k5de), and at timestamp 724, user "company3" completed the task "Refund" (Activity_1p7rey7). The BPMN diagram shows that both tasks are part of the same process and are connected by a sequence flow, indicating that they should be performed by the same user.
+
+##### **Suggested Fix:**
+To resolve this violation, the task "Refund" (Activity_1p7rey7) should be reassigned to user "technician4", ensuring that both tasks are performed by the same user. Additionally, the process should be modified to enforce the BoD constraint, ensuring that the same user performs both tasks in the future.

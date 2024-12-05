@@ -1,0 +1,43 @@
+### **Violation 1:**
+- **Violation Type:** "BoD"
+- **Parent Task ID and Name:** "Activity_1xtsdxu" (Unnamed)
+- **Subtask(s) ID and Name:** "Activity_0rhq2zz" (Finish the project) and "Activity_1lsjzdf" (Fill out project application)
+- **User(s) Involved:** "company4" and "company2"
+
+##### **Reason for Occurrence:**
+The violation occurred because users "company4" and "company2" were assigned to both tasks "Activity_0rhq2zz" and "Activity_1lsjzdf", which are part of the same parent task "Activity_1xtsdxu". This is a Binding of Duties (BoD) violation, as the same users are performing multiple tasks that should be separated.
+
+According to the simulation log, at timestamp 279, user "company2" finished task "Activity_0rhq2zz", and at timestamp 240, user "company4" started task "Activity_1lsjzdf". This indicates that both users were involved in the same process, leading to the BoD violation.
+
+##### **Suggested Fix:**
+To resolve this violation, it is recommended to reassign one of the tasks to a different user. For example, task "Activity_0rhq2zz" could be reassigned to user "company1", while task "Activity_1lsjzdf" remains assigned to user "company4". This would ensure that the same users are not performing multiple tasks that should be separated.
+
+### **Violation 2:**
+- **Violation Type:** "SoD"
+- **Parent Task ID and Name:** "Activity_0oz806n" (Unnamed)
+- **Subtask(s) ID and Name:** "Activity_03brord" (Evaluate refund plan) and "Activity_03d8opo" (Decide external auditing)
+- **User(s) Involved:** "ecofinantial1"
+
+##### **Reason for Occurrence:**
+The violation occurred because user "ecofinantial1" was assigned to both tasks "Activity_03brord" and "Activity_03d8opo", which are part of the same parent task "Activity_0oz806n". This is a Segregation of Duties (SoD) violation, as the same user is performing multiple tasks that should be separated.
+
+According to the simulation log, at timestamp 428, user "ecofinantial1" started task "Activity_03brord", and at timestamp 552, user "ecofinantial1" started task "Activity_03d8opo". This indicates that the same user was involved in both tasks, leading to the SoD violation.
+
+##### **Suggested Fix:**
+To resolve this violation, it is recommended to reassign one of the tasks to a different user. For example, task "Activity_03d8opo" could be reassigned to user "ecofinantial2", while task "Activity_03brord" remains assigned to user "ecofinantial1". This would ensure that the same user is not performing multiple tasks that should be separated.
+
+### **Violation 3:**
+- **Violation Type:** "UoC"
+- **Parent Task ID and Name:** "Activity_1fx8kp5" (Unnamed)
+- **Subtask(s) ID and Name:** "Activity_1twduio" (Evaluate project quality)
+- **User(s) Involved:** "evaluator3"
+
+##### **Reason for Occurrence:**
+The violation occurred because user "evaluator3" exceeded the allowed threshold of 1 execution for task "Activity_1twduio". According to the simulation log, at timestamp 547, user "evaluator3" started task "Activity_1twduio" for the third time, exceeding the allowed threshold.
+
+##### **Suggested Fix:**
+To resolve this violation, it is recommended to adjust the threshold for task "Activity_1twduio" to allow for more executions or to reassign the task to a different user. For example, the threshold could be increased to 3, or task "Activity_1twduio" could be reassigned to user "evaluator2". This would ensure that the user is not exceeding the allowed threshold for the task.
+
+... (rest of the violations)
+
+Note: The above diagnosis is based on the provided data and may not be comprehensive or accurate without additional context or information.

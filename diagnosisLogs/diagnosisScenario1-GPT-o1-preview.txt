@@ -1,0 +1,369 @@
+---
+
+#### **Violation 1:**
+- **Violation Type:** Binding of Duty (BoD)
+- **Parent Task ID and Name:** Unnamed (Activity_1xtsdxu)
+- **Subtask(s) ID and Name:**
+  - Fill out project application (Activity_1lsjzdf)
+  - Finish the project (Activity_0rhq2zz)
+- **User(s) Involved:** company2 and company1
+- **Instance:** 1
+
+##### **Reason for Occurrence:**
+
+The Binding of Duty (BoD) constraint specified in the BPMN diagram for the parent task **Activity_1xtsdxu** requires that both subtasks, **Activity_1lsjzdf** (Fill out project application) and **Activity_0rhq2zz** (Finish the project), be performed by the **same user**.
+
+Analyzing the **Simulation Log** for **Instance 1**:
+
+1. **Fill out project application (Activity_1lsjzdf):**
+   - **Log Entry:** `[Task, name=Fill out project application, id_bpmn=Activity_1lsjzdf, userTask=company2, time=55, startTime=0, instance=1]`
+   - **Execution Details:**
+     - **User Assigned:** company2
+     - **Start Time:** 0
+     - **Duration:** 55 units
+
+2. **Finish the project (Activity_0rhq2zz):**
+   - **Log Entry:** `[Task, name=Finish the project, id_bpmn=Activity_0rhq2zz, userTask=company1, time=62, startTime=261, instance=1]`
+   - **Execution Details:**
+     - **User Assigned:** company1
+     - **Start Time:** 261
+     - **Duration:** 62 units
+
+**Violation Explanation:**
+
+- The two subtasks were executed by **different users**: company2 started the process by filling out the application, but company1 finished the project.
+- According to the **BoD constraint** in the BPMN (found in `<bpmn:serviceTask id="Activity_1xtsdxu" security:securityType="BoD">`), this is a violation.
+
+##### **Suggested Fix:**
+
+1. **Enforce User Consistency Across Subtasks:**
+   - Implement a mechanism to **pass the user identity** from the first subtask to the second within the same process instance.
+   - **Technical Implementation:** Use process variables to store the user ID of the initial task and automatically assign the same user to subsequent tasks linked by the BoD constraint.
+
+2. **Adjust Resource Availability:**
+   - Ensure that the user who starts the application (company2) is available to finish the project.
+   - **Operational Change:** Coordinate schedules or workloads to prevent the initial user from becoming unavailable later in the process.
+
+3. **Update Task Assignment Logic:**
+   - Modify the task assignment rules to prioritize assigning the same user for both subtasks when a BoD constraint exists.
+   - **Policy Implementation:** Update the assignment algorithms or manual assignment protocols to check for BoD constraints before assigning users.
+
+---
+
+#### **Violation 2:**
+- **Violation Type:** Binding of Duty (BoD)
+- **Parent Task ID and Name:** Unnamed (Activity_1i1gel3)
+- **Subtask(s) ID and Name:**
+  - Add research groups (Activity_1u4k5de)
+  - Refund (Activity_1p7rey7)
+- **User(s) Involved:** technician4 and company2
+- **Instance:** 1
+
+##### **Reason for Occurrence:**
+
+The BoD constraint for **Activity_1i1gel3** requires that **Activity_1u4k5de** (Add research groups) and **Activity_1p7rey7** (Refund) be performed by the **same user**.
+
+From the **Simulation Log** for **Instance 1**:
+
+1. **Add research groups (Activity_1u4k5de):**
+   - **Log Entry:** `[Task, name=Add research groups, id_bpmn=Activity_1u4k5de, userTask=technician4, time=57, startTime=55, instance=1]`
+   - **User Assigned:** technician4
+
+2. **Refund (Activity_1p7rey7):**
+   - **Log Entry:** `[Task, name=Refund, id_bpmn=Activity_1p7rey7, userTask=company2, time=66, startTime=487, instance=1]`
+   - **User Assigned:** company2
+
+**Violation Explanation:**
+
+- The two subtasks were executed by users from **different roles**: technician4 (Technical Department) and company2 (Company).
+- According to the BPMN diagram, these tasks are in different lanes with distinct user roles, making it impractical for one user to perform both tasks.
+- The BoD constraint is violated because the system allowed different users to execute the subtasks without enforcing the same user requirement.
+
+##### **Suggested Fix:**
+
+1. **Reevaluate the BoD Constraint Applicability:**
+   - **Assess Feasibility:** Since the tasks are assigned to different roles, consider whether it's practical or necessary for the same user to perform both.
+   - **Adjust Constraint:** If the constraint is not feasible, modify or remove the BoD requirement for this parent task in the BPMN diagram.
+
+2. **Role Adjustment or Merging:**
+   - **Combine Roles:** If organizationally acceptable, allow users to have multiple roles (e.g., a user can be both a technician and company representative).
+   - **User Training:** Provide cross-training to enable users to perform tasks across different roles.
+
+3. **Modify Task Assignments:**
+   - **Unified Assignment Logic:** Implement assignment rules that can assign the same user to tasks across different lanes when a BoD constraint exists.
+   - **Process Redesign:** Adjust the process flow to bring tasks into the same lane or role where feasible.
+
+---
+
+#### **Violation 3:**
+- **Violation Type:** Usage of Control (UoC)
+- **Parent Task ID and Name:** Unnamed (Activity_1fx8kp5)
+- **Subtask ID and Name:** Evaluate project quality (Activity_1twduio)
+- **User(s) Involved:** evaluator1
+- **Total Number of Executions (Accumulated):** 3
+- **Maximum Allowed:** 1
+- **Instance:** 4
+
+##### **Reason for Occurrence:**
+
+The UoC constraint on **Activity_1fx8kp5** specifies a maximum threshold (**Mth**) of **1**, meaning a user should not execute the subtask more than once.
+
+From the **Simulation Log**:
+
+- **Evaluator1's Executions of Activity_1twduio:**
+
+  1. **Instance 1:**
+     - **Log Entry:** `[Task, name=Evaluate project quality, id_bpmn=Activity_1twduio, userTask=evaluator1, numberOfExecutions=1, time=14, startTime=323, instance=1]`
+
+  2. **Instance 4:**
+     - **Log Entry:** `[Task, name=Evaluate project quality, id_bpmn=Activity_1twduio, userTask=evaluator1, numberOfExecutions=3, time=93, startTime=500, instance=4]`
+
+- **Violation Details:**
+  - **Total Executions by evaluator1:** 3 (exceeding the maximum allowed of 1)
+  - The violation was detected in **Instance 4**, but the accumulated count includes prior instances.
+
+**Violation Explanation:**
+
+- **Resource Limitation:** There may be a shortage of available evaluators, leading to over-assignment of tasks to evaluator1.
+- **Assignment Logic Flaw:** The system did not enforce the maximum execution threshold, allowing evaluator1 to be assigned beyond the limit.
+- **Constraint Not Enforced Across Instances:** The accumulated count suggests that the UoC constraint should apply globally across all instances, but the assignment mechanism failed to consider this.
+
+##### **Suggested Fix:**
+
+1. **Increase Resource Availability:**
+   - **Hire or Allocate More Evaluators:** Ensure there are enough evaluators to distribute the workload without exceeding individual thresholds.
+   - **Balance Workloads:** Monitor and adjust assignments to prevent overloading specific users.
+
+2. **Implement Execution Tracking Mechanism:**
+   - **Global Execution Counter:** Create a system to track the number of times each user executes the task across all instances.
+   - **Enforce Thresholds:** Modify the assignment logic to prevent users from being assigned if they have reached the maximum allowed executions.
+
+3. **Adjust Assignment Algorithms:**
+   - **Exclude Overused Users:** Update algorithms to filter out users who have met or exceeded their execution limit.
+   - **Prioritize Underutilized Users:** Assign tasks to evaluators with fewer executions to evenly distribute workload.
+
+4. **Review and Possibly Increase Threshold:**
+   - **Assess Business Requirements:** Determine if the threshold of 1 is too restrictive given the number of evaluators and process demands.
+   - **Adjust Mth Value:** If appropriate, increase the maximum allowed executions to a more practical number.
+
+---
+
+#### **Violation 4:**
+- **Violation Type:** Binding of Duty (BoD)
+- **Parent Task ID and Name:** Unnamed (Activity_1xtsdxu)
+- **Subtask(s) ID and Name:**
+  - Finish the project (Activity_0rhq2zz)
+  - Fill out project application (Activity_1lsjzdf)
+- **User(s) Involved:** company3 and company2
+- **Instance:** 5
+
+##### **Reason for Occurrence:**
+
+The BoD constraint requires that **Activity_1lsjzdf** and **Activity_0rhq2zz** be performed by the **same user**.
+
+From the **Simulation Log** for **Instance 5**:
+
+1. **Fill out project application (Activity_1lsjzdf):**
+   - **Log Entry:** `[Task, name=Fill out project application, id_bpmn=Activity_1lsjzdf, userTask=company2, time=65, startTime=240, instance=5]`
+   - **User Assigned:** company2
+
+2. **Finish the project (Activity_0rhq2zz):**
+   - **Log Entry:** `[Task, name=Finish the project, id_bpmn=Activity_0rhq2zz, userTask=company3, time=59, startTime=521, instance=5]`
+   - **User Assigned:** company3
+
+**Violation Explanation:**
+
+- The tasks were executed by **different company users**.
+- The BoD constraint in **Activity_1xtsdxu** was not enforced, leading to the violation.
+
+##### **Suggested Fix:**
+
+1. **Implement User Identity Passing:**
+   - **Process Variable:** Store the user ID of company2 during the execution of **Activity_1lsjzdf**.
+   - **Automatic Assignment:** Use this stored ID to assign the same user to **Activity_0rhq2zz**.
+
+2. **Adjust Resource Scheduling:**
+   - **Ensure Availability:** Coordinate schedules to keep the initial user (company2) available for the later task.
+   - **User Commitment:** Require the user to commit to both tasks upon starting the process.
+
+3. **Modify Assignment Logic:**
+   - **Enforce BoD Constraints:** Update the system to recognize and enforce BoD constraints during user assignment.
+   - **Validation Checks:** Before assigning a different user, the system should check for existing BoD constraints.
+
+---
+
+#### **Violation 5:**
+- **Violation Type:** Binding of Duty (BoD)
+- **Parent Task ID and Name:** Unnamed (Activity_1i1gel3)
+- **Subtask(s) ID and Name:**
+  - Refund (Activity_1p7rey7)
+  - Add research groups (Activity_1u4k5de)
+- **User(s) Involved:** company4 and technician3
+- **Instance:** 2
+
+##### **Reason for Occurrence:**
+
+The BoD constraint mandates that **Activity_1u4k5de** and **Activity_1p7rey7** be executed by the **same user**.
+
+From the **Simulation Log** for **Instance 2**:
+
+1. **Add research groups (Activity_1u4k5de):**
+   - **Log Entry:** `[Task, name=Add research groups, id_bpmn=Activity_1u4k5de, userTask=technician3, time=58, startTime=131, instance=2]`
+   - **User Assigned:** technician3
+
+2. **Refund (Activity_1p7rey7):**
+   - **Log Entry:** `[Task, name=Refund, id_bpmn=Activity_1p7rey7, userTask=company4, time=52, startTime=568, instance=2]`
+   - **User Assigned:** company4
+
+**Violation Explanation:**
+
+- The subtasks were performed by users from **different roles** (Technician and Company).
+- The BoD constraint is impractical here due to the separation of roles and responsibilities.
+
+##### **Suggested Fix:**
+
+1. **Assess and Adjust the BoD Constraint:**
+   - **Feasibility Analysis:** Determine if it's reasonable to expect one user to perform tasks across different roles.
+   - **Constraint Modification:** If not feasible, remove or redefine the BoD constraint for this parent task.
+
+2. **Role Cross-Training:**
+   - **Empower Users with Multiple Roles:** Allow certain users to perform tasks in both roles if organizational policies permit.
+   - **Training Programs:** Provide necessary training for users to handle tasks in different departments.
+
+3. **Process Redesign:**
+   - **Combine Tasks Where Possible:** Merge subtasks into a single task that can be assigned to a user with combined roles.
+   - **Adjust Lanes in BPMN:** Modify the BPMN diagram to reflect the changes, ensuring tasks are within the same lane when BoD constraints apply.
+
+---
+
+#### **Violation 6:**
+- **Violation Type:** Binding of Duty (BoD)
+- **Parent Task ID and Name:** Unnamed (Activity_1i1gel3)
+- **Subtask(s) ID and Name:**
+  - Refund (Activity_1p7rey7)
+  - Add research groups (Activity_1u4k5de)
+- **User(s) Involved:** company2 and technician1
+- **Instance:** 3
+
+##### **Reason for Occurrence:**
+
+Similar to Violation 5, the BoD constraint requires the same user to execute both subtasks.
+
+From the **Simulation Log** for **Instance 3**:
+
+1. **Add research groups (Activity_1u4k5de):**
+   - **Log Entry:** `[Task, name=Add research groups, id_bpmn=Activity_1u4k5de, userTask=technician1, time=52, startTime=180, instance=3]`
+   - **User Assigned:** technician1
+
+2. **Refund (Activity_1p7rey7):**
+   - **Log Entry:** `[Task, name=Refund, id_bpmn=Activity_1p7rey7, userTask=company2, time=52, startTime=624, instance=3]`
+   - **User Assigned:** company2
+
+**Violation Explanation:**
+
+- Users from different departments performed the subtasks, violating the BoD constraint.
+
+##### **Suggested Fix:**
+
+Refer to the fixes suggested in **Violation 5**, focusing on:
+
+- **Reevaluating the BoD constraint applicability.**
+- **Enabling cross-role task execution if feasible.**
+- **Updating the BPMN diagram to reflect any changes.**
+
+---
+
+#### **Violation 7:**
+- **Violation Type:** Binding of Duty (BoD)
+- **Parent Task ID and Name:** Unnamed (Activity_1i1gel3)
+- **Subtask(s) ID and Name:**
+  - Refund (Activity_1p7rey7)
+  - Add research groups (Activity_1u4k5de)
+- **User(s) Involved:** company1 and technician4
+- **Instance:** 4
+
+##### **Reason for Occurrence:**
+
+Again, the BoD constraint is violated because the subtasks were executed by different users from separate roles.
+
+From the **Simulation Log** for **Instance 4**:
+
+1. **Add research groups (Activity_1u4k5de):**
+   - **Log Entry:** `[Task, name=Add research groups, id_bpmn=Activity_1u4k5de, userTask=technician4, time=47, startTime=305, instance=4]`
+   - **User Assigned:** technician4
+
+2. **Refund (Activity_1p7rey7):**
+   - **Log Entry:** `[Task, name=Refund, id_bpmn=Activity_1p7rey7, userTask=company1, time=57, startTime=714, instance=4]`
+   - **User Assigned:** company1
+
+**Violation Explanation:**
+
+- The tasks were performed by users from different departments, which is inconsistent with the BoD constraint.
+
+##### **Suggested Fix:**
+
+Apply the same solutions as in **Violations 5 and 6**:
+
+- **Reassess the necessity and feasibility of the BoD constraint.**
+- **Consider organizational changes to roles and responsibilities.**
+- **Modify the BPMN diagram and process flows accordingly.**
+
+---
+
+#### **Violation 8:**
+- **Violation Type:** Binding of Duty (BoD)
+- **Parent Task ID and Name:** Unnamed (Activity_1i1gel3)
+- **Subtask(s) ID and Name:**
+  - Refund (Activity_1p7rey7)
+  - Add research groups (Activity_1u4k5de)
+- **User(s) Involved:** company3 and technician4
+- **Instance:** 5
+
+##### **Reason for Occurrence:**
+
+In this instance, the BoD constraint was violated because different users executed the subtasks.
+
+From the **Simulation Log** for **Instance 5**:
+
+1. **Add research groups (Activity_1u4k5de):**
+   - **Log Entry:** `[Task, name=Add research groups, id_bpmn=Activity_1u4k5de, userTask=technician4, time=47, startTime=305, instance=5]`
+   - **User Assigned:** technician4
+
+2. **Refund (Activity_1p7rey7):**
+   - **Log Entry:** `[Task, name=Refund, id_bpmn=Activity_1p7rey7, userTask=company3, time=64, startTime=724, instance=5]`
+   - **User Assigned:** company3
+
+**Violation Explanation:**
+
+- The execution by different users in separate roles violates the BoD constraint set in the BPMN.
+
+##### **Suggested Fix:**
+
+Consistent with **Violations 5 to 7**, the following actions are recommended:
+
+1. **Evaluate the BoD Constraint:**
+   - Determine if requiring the same user for tasks across different roles is practical.
+   - If not, modify or eliminate the constraint.
+
+2. **Enable Role Flexibility:**
+   - Allow users to hold multiple roles if appropriate.
+   - Provide necessary training and authorization.
+
+3. **Process and BPMN Adjustments:**
+   - Update the BPMN diagram to reflect any changes in roles or constraints.
+   - Ensure that the process flow supports the practical execution of tasks without violating constraints.
+
+---
+
+### **Overall Observations and Recommendations:**
+
+- **Common Issue:** The BoD violations frequently occur due to tasks assigned to different roles that are expected to be performed by the same user.
+- **Recommendation:** Reassess the applicability of BoD constraints across different roles and adjust the BPMN model accordingly.
+- **UoC Violations:** Highlight resource constraints and the need for better workload distribution among users.
+- **Action Plan:**
+  - **Review and Update Constraints:** Align process constraints with organizational capabilities and roles.
+  - **Enhance Assignment Mechanisms:** Implement systems that enforce constraints during task assignments.
+  - **Increase Resources:** Address resource limitations by allocating more personnel or adjusting workloads.
+  - **Process Redesign:** Consider restructuring the process flows to prevent violations while maintaining efficiency.
+
+---
