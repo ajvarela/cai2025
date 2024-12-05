@@ -1,7 +1,7 @@
 {
   "name": "cep-4-bpm-sec",
   "version": "0.34.5",
-  "description": "CEP4BPMSec",
+  "description": "XSecBPMN",
   "module": "index.js",
   "scripts": {
     "all": "run-s bundle:src lint test bundle",

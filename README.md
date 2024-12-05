@@ -1,4 +1,4 @@
-# CEP4BPMSec
+# XSecBPMN
 
 ## Prerequisites
 
@@ -84,7 +84,7 @@ Once all prerequisites are installed, you can run the entire project with a sing
 
  1. **Navigate to the Root Folder**:
 ```bash
-cd CEP4BPMSec
+cd XSecBPMN
 ```
 
  2. **Run the project**:

@@ -1,5 +1,5 @@
 {
-  "name": "cep4bpmsec-api",
+  "name": "xsecbpmn-api",
   "version": "1.0.0",
   "description": "BPMN security tasks",
   "main": "server.js",
@@ -13,7 +13,7 @@
     "RestAPI",
     "MongoDB",
     "Mongoose",
-    "CEP4BPMSec"
+    "XSecBPMN"
   ],
   "author": "anapareciendo",
   "license": "MIT",
