@@ -2,20 +2,20 @@
 - Parent Task ID: Activity_1xtsdxu
 - SubTask 1 ID: Activity_1lsjzdf
 - SubTask 2 ID: Activity_0rhq2zz
-- Executed By Users: company2 and company1
+- Executed By Users: company4 and company2
 - Instance: 1
 
 - [BOD MONITOR] Binding of Duties violation detected:
 - Parent Task ID: Activity_1i1gel3
 - SubTask 1 ID: Activity_1u4k5de
 - SubTask 2 ID: Activity_1p7rey7
-- Executed By Users: technician4 and company2
+- Executed By Users: technician2 and company4
 - Instance: 1
 
 - [UOC MONITOR] Usage of Control violation detected:
 - Parent Task ID: Activity_1fx8kp5
 - SubTask ID: Activity_1twduio
-- User(s): evaluator1
+- User(s): evaluator4
 - Total number of executions (accumulated): 3
 - Maximum allowed: 1
 - Instance: 4
@@ -24,34 +24,19 @@
 - Parent Task ID: Activity_1xtsdxu
 - SubTask 1 ID: Activity_0rhq2zz
 - SubTask 2 ID: Activity_1lsjzdf
-- Executed By Users: company3 and company2
+- Executed By Users: company3 and company4
 - Instance: 5
-
-- [BOD MONITOR] Binding of Duties violation detected:
-- Parent Task ID: Activity_1i1gel3
-- SubTask 1 ID: Activity_1p7rey7
-- SubTask 2 ID: Activity_1u4k5de
-- Executed By Users: company4 and technician3
-- Instance: 2
-
-- [BOD MONITOR] Binding of Duties violation detected:
-- Parent Task ID: Activity_1i1gel3
-- SubTask 1 ID: Activity_1p7rey7
-- SubTask 2 ID: Activity_1u4k5de
-- Executed By Users: company2 and technician1
-- Instance: 3
 
 - [BOD MONITOR] Binding of Duties violation detected:
 - Parent Task ID: Activity_1i1gel3
 - SubTask 1 ID: Activity_1p7rey7
 - SubTask 2 ID: Activity_1u4k5de
 - Executed By Users: company1 and technician4
-- Instance: 4
+- Instance: 2
 
 - [BOD MONITOR] Binding of Duties violation detected:
 - Parent Task ID: Activity_1i1gel3
 - SubTask 1 ID: Activity_1p7rey7
 - SubTask 2 ID: Activity_1u4k5de
-- Executed By Users: company3 and technician4
-- Instance: 5
-
+- Executed By Users: company4 and technician4
+- Instance: 4

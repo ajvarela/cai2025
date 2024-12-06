@@ -7,19 +7,19 @@
   </bpmn:collaboration>
   <bpmn:process id="Process_1" isExecutable="true">
     <bpmn:laneSet id="LaneSet_1y27ty4">
-      <bpmn:lane id="Lane_1fyurgg" name="Ecofinantial Department" lane:userWithoutRole="ecofinantial1, ecofinantial2, ecofinantial3">
+      <bpmn:lane id="Lane_1fyurgg" name="Ecofinantial Department" lane:userWithoutRole="allLane1, allLane2, ecofinantial1, ecofinantial2, ecofinantial3">
         <bpmn:flowNodeRef>Activity_07z6dxo</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_03brord</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_03d8opo</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1fx8kp5</bpmn:flowNodeRef>
       </bpmn:lane>
-      <bpmn:lane id="Lane_145cig8" name="Evaluator" lane:userWithoutRole="evaluator1, evaluator2, evaluator3, evaluator4">
+      <bpmn:lane id="Lane_145cig8" name="Evaluator" lane:userWithoutRole="allLane1, allLane2, evaluator1, evaluator2, evaluator3, evaluator4">
         <bpmn:flowNodeRef>Activity_1conkxb</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1twduio</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_1v9au9h</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0oz806n</bpmn:flowNodeRef>
       </bpmn:lane>
-      <bpmn:lane id="Lane_179no70" name="Company" lane:userWithoutRole="company1, company2, company3, company4">
+      <bpmn:lane id="Lane_179no70" name="Company" lane:userWithoutRole="allLane1, allLane2, company1, company2, company3, company4">
         <bpmn:flowNodeRef>Event_10piu52</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1lsjzdf</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1xtsdxu</bpmn:flowNodeRef>
@@ -28,7 +28,7 @@
         <bpmn:flowNodeRef>Activity_1p7rey7</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1racnnc</bpmn:flowNodeRef>
       </bpmn:lane>
-      <bpmn:lane id="Lane_1j2awcp" name="Technical Department" lane:userWithoutRole="technician1, technician2, technician3, technician4">
+      <bpmn:lane id="Lane_1j2awcp" name="Technical Department" lane:userWithoutRole="allLane1, allLane2, technician1, technician2, technician3, technician4">
         <bpmn:flowNodeRef>Gateway_0epbui3</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1u4k5de</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_17ptqba</bpmn:flowNodeRef>

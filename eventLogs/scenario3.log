@@ -1,4 +1,8 @@
 [Collaboration, name=Unnamed, id_bpmn=Collaboration_0katfe5, instances=20]
+[type=bpmn:Lane, name=Technical Department, id_bpmn=Lane_1j2awcp, lane_users=['allLane1', 'allLane2', 'technician1', 'technician2', 'technician3', 'technician4'], contained_elements=['Gateway_0epbui3', 'Activity_1u4k5de', 'Activity_17ptqba', 'Gateway_0w2b9qv', 'Activity_0bcw6ho', 'Gateway_1s1smiq', 'Event_0q6kxac', 'Activity_07uebsf', 'Gateway_14xcbek', 'Activity_12344yk', 'Activity_0kp0uwb']]
+[type=bpmn:Lane, name=Company, id_bpmn=Lane_179no70, lane_users=['allLane1', 'allLane2', 'company1', 'company2', 'company3', 'company4'], contained_elements=['Event_10piu52', 'Activity_1lsjzdf', 'Activity_1xtsdxu', 'Activity_1i1gel3', 'Activity_0rhq2zz', 'Activity_1p7rey7', 'Event_1racnnc']]
+[type=bpmn:Lane, name=Evaluator, id_bpmn=Lane_145cig8, lane_users=['allLane1', 'allLane2', 'evaluator1', 'evaluator2', 'evaluator3', 'evaluator4'], contained_elements=['Activity_1conkxb', 'Activity_1twduio', 'Gateway_1v9au9h', 'Activity_0oz806n']]
+[type=bpmn:Lane, name=Ecofinantial Department, id_bpmn=Lane_1fyurgg, lane_users=['allLane1', 'allLane2', 'ecofinantial1', 'ecofinantial2', 'ecofinantial3'], contained_elements=['Activity_07z6dxo', 'Activity_03brord', 'Activity_03d8opo', 'Activity_1fx8kp5']]
 [StartEvent, name=Unnamed, id_bpmn=Event_10piu52, subTask="Activity_1lsjzdf", startTime=0, instance=1]
 [Task, name=Fill out project application, id_bpmn=Activity_1lsjzdf, userTask=company4, numberOfExecutions=2, time=59, subTask="Gateway_0epbui3", startTime=0, instance=1]
 [ParallelGateway, name=Unnamed, id_bpmn=Gateway_0epbui3, subTask="Activity_1u4k5de, Activity_17ptqba", startTime=59, instance=1]

@@ -139,7 +139,7 @@ exports.saveEsperFile = (req, res) => {
             console.error('Error al leer violations.txt:', err);
             return res.status(500).send({ message: 'Error al leer violations.txt' });
         };
-        const gpto1 = 'diagnosisScenario' + filename + '-GPT-o1-preview.txt'
+        const gpto1 = 'diagnosisScenario' + filename + '-GPT-o1.txt'
         const gpto1Path = path.join(__dirname, '..', '..', '..', 'diagnosisLogs', gpto1);
         fs.readFile(gpto1Path, 'utf8', (err, dataGPTo1) => {
             if (err) {

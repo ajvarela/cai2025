@@ -85,7 +85,7 @@ Use specific examples where applicable.
 """
 
 completion = client.chat.completions.create(
-    model="gpt-o1-preview",
+    model="gpt-o1",
     messages=[{"role": "user", "content": prompt}],
     temperature=0.2,
     top_p=0.7,
